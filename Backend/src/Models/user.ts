@@ -6,9 +6,7 @@ interface UserAttributes{
     lastNameUser: string,
     idNumber: number,
     typeId: string,
-    user: string,
-    password: string,
-    RolId: number,
+
 }
 
 interface UserInstance extends Model<UserAttributes>{
@@ -29,14 +27,5 @@ export const User = db.define <UserInstance>('users', {
     typeId: {
         type: DataTypes.STRING
     },
-    user: {
-        type: DataTypes.STRING
-    },
-    password: {
-        type: DataTypes.STRING
-    },
-    RolId: {
-        type: DataTypes.NUMBER
-    }
 },
 )
