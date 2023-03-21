@@ -9,10 +9,22 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getUsers = void 0;
+exports.UserService = void 0;
+const User_Dto_1 = require("../DTOs/User.Dto");
 const user_1 = require("../Models/user");
-const getUsers = () => __awaiter(void 0, void 0, void 0, function* () {
-    return user_1.User.findAll();
-    // return users.map((user: any) => new UserDTO(user.nameUser, user.lastNameUser));
-});
-exports.getUsers = getUsers;
+class UserService {
+    find() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const users = yield user_1.User.findAll();
+            const usersDTOs = users.map((user) => new User_Dto_1.UserDTO(user.nameUser, user.lastNameUser));
+            return usersDTOs;
+        });
+    }
+    create(data) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const user = yield user_1.User.create(data);
+            return user;
+        });
+    }
+}
+exports.UserService = UserService;
