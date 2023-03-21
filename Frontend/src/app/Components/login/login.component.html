@@ -1,0 +1,39 @@
+<div class="body">
+  <div class="logo">
+    <div>
+      <img
+        src="https://th.bing.com/th/id/R.3f487e946d7ed5be3aa898a14356125f?rik=M4bEttE039GDwA&riu=http%3a%2f%2f4.bp.blogspot.com%2f-Bc4m9RF0imw%2fVTcH82WcnrI%2fAAAAAAAAAMM%2f_PzAjOoZqsA%2fs1600%2fLogotipo_UIS.png&ehk=yfNtXGZ6MoU77OfaVZ2F6YguJxY4t2K5WNvhBvHRiAc%3d&risl=&pid=ImgRaw&r=0"
+        alt=""
+      />
+    </div>
+  </div>
+  <div class="form">
+    <form (ngSubmit)="onSubmit()">
+      <div class="p-field p-col-12 p-md-4">
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon">
+            <i class="pi pi-user"></i>
+          </span>
+          <span class="p-float-label">
+            <input type="text" id="Usuario" pInputText />
+            <label for="Usuario">Usuario</label>
+          </span>
+        </div>
+      </div>
+      <div class="p-field p-col-12 p-md-4">
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon">
+            <i class="pi pi-lock"></i>
+          </span>
+          <span class="p-float-label">
+            <input type="password" id="Password" pInputText />
+            <label for="Password">Contraseña</label>
+          </span>
+        </div>
+      </div>
+      <div class="but">
+        <button pButton type="submit" label="Iniciar Sesion" ></button>
+      </div>
+    </form>
+  </div>
+</div>

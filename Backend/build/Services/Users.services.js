@@ -9,28 +9,22 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.postUsuario = exports.getUsuarios = void 0;
-const Users_services_1 = require("../Services/Users.services");
-const user = new Users_services_1.UserService();
-const getUsuarios = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        const users = yield user.find();
-        res.json(users);
+exports.UserService = void 0;
+const User_Dto_1 = require("../DTOs/User.Dto");
+const user_1 = require("../Models/user");
+class UserService {
+    find() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const users = yield user_1.User.findAll();
+            const userDTOs = users.map((user) => new User_Dto_1.UserDTO(user.nameUser, user.lastNameUser));
+            return userDTOs;
+        });
     }
-    catch (error) {
-        next(error);
+    create(data) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const newUser = yield user_1.User.create(data);
+            return newUser;
+        });
     }
-});
-exports.getUsuarios = getUsuarios;
-const postUsuario = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
-    const { body } = req;
-    try {
-        const users = yield user.create(body);
-        res.json(users);
-    }
-    catch (error) {
-        console.error(error);
-        next(error);
-    }
-});
-exports.postUsuario = postUsuario;
+}
+exports.UserService = UserService;
