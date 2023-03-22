@@ -5,18 +5,15 @@ import * as bcryptjs from "bcryptjs"
 export class UserService {
   async find() {
     const users = await User.findAll();
-    const usersDTOs = users.map(
-      (user) => new UserDTO(user.nameUser, user.lastNameUser)
-    );
-    return usersDTOs
+    /*const usersDTOs = users.map(
+      (user) => new UserDTO(user.nameUser, user.lastNameUser, user.user)
+    );*/
+    return users
   }
 
-  async create(data: any){
-    const user = await User.create(data)
-    //Numero de vueltas de encriptado
-    const salt = bcryptjs.genSaltSync();
-    //Encriptado
-    user.dataValues.password = bcryptjs.hashSync(data.password, salt)
-    return user
+  async findOne(id: any){
+    const user = await User.findOne(id);
+    const userDTO = new UserDTO(user.nameUser, user.lastNameUser, user.user)
+    return userDTO
   }
 }

@@ -1,13 +1,11 @@
 import { Router } from 'express';
-import { check } from 'express-validator';
 import { getUsuarios, postUsuario } from '../Controllers/users.controller';
-
-
+import {validationJwt} from "../Middleware/validationJWT";
 
 const router = Router();
 
-router.get('/', getUsuarios)
+router.get('/',[
+    validationJwt
+], getUsuarios)
 router.post('/',postUsuario)
-
-
 export default router;

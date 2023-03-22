@@ -2,9 +2,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserDTO = void 0;
 class UserDTO {
-    constructor(nameUser, lastNameUser) {
+    constructor(nameUser, lastNameUser, user) {
         this.nameUser = nameUser;
         this.lastNameUser = lastNameUser;
+        this.user = user;
     }
 }
 exports.UserDTO = UserDTO;

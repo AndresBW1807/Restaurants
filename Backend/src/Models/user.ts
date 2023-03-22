@@ -14,6 +14,9 @@ interface UserAttributes{
 interface UserInstance extends Model<UserAttributes>{
     nameUser: string,
     lastNameUser: string,
+    user: string,
+    password: string,
+    idRol: number
 }
 
 export const User = db.define <UserInstance>('users', {
