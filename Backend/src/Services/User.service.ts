@@ -1,5 +1,6 @@
 import { UserDTO } from "../DTOs/User.Dto";
 import { User } from "../Models/user";
+import * as bcryptjs from "bcryptjs"
 
 export class UserService {
   async find() {
@@ -12,6 +13,10 @@ export class UserService {
 
   async create(data: any){
     const user = await User.create(data)
+    //Numero de vueltas de encriptado
+    const salt = bcryptjs.genSaltSync();
+    //Encriptado
+    user.dataValues.password = bcryptjs.hashSync(data.password, salt)
     return user
   }
 }

@@ -1,7 +1,6 @@
-import { User } from "./../Models/user";
 import { Request, Response } from "express";
-import { UserDTO } from "../DTOs/User.Dto";
 import { UserService } from "../Services/User.service";
+
 
 const userService = new UserService();
 
@@ -17,10 +16,11 @@ export const getUsuarios = async (req: Request, res: Response, next: any) => {
 export const postUsuario = async (req: Request, res: Response, next: any) => {
   const { body } = req;
   try {
+
+    //guardar en base de datos
     const user = await userService.create(body)
     res.json(user)
   } catch (error) {
-    console.error(error)
     next(error);
   }
 };

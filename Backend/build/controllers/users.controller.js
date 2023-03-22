@@ -25,11 +25,11 @@ exports.getUsuarios = getUsuarios;
 const postUsuario = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     const { body } = req;
     try {
+        //guardar en base de datos
         const user = yield userService.create(body);
         res.json(user);
     }
     catch (error) {
-        console.error(error);
         next(error);
     }
 });
