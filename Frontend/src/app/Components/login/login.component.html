@@ -42,6 +42,9 @@
         <div class="msg" *ngIf="Login.get('password')?.touched && Login.get('password')?.valid == false">
           <p-message severity="error" text="Contraseña requerida"></p-message>
         </div>
+        <div class="msg" [hidden]="error">
+          <p-message severity="error" text="El usuario o la contraseña es incorrecta"></p-message>
+        </div>
       </div>
       <button pButton type="submit" label="Iniciar Sesión"></button>
     </form>
