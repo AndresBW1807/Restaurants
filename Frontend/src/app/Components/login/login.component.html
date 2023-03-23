@@ -8,7 +8,7 @@
     </div>
   </div>
   <div class="login">
-    <form (onSubmit)="onSubmit()">
+    <form (ngSubmit)="Login.valid && onSubmit()" [formGroup] = "Login">
       <div class="imageLogo">
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Logotipo_UIS.png/572px-Logotipo_UIS.png?20131230031906"
@@ -21,9 +21,12 @@
             <i class="pi pi-user"></i>
           </span>
           <span class="p-float-label">
-            <input type="text" id="User" pInputText />
+            <input type="text" id="User" formControlName="user"  pInputText />
             <label for="User">Usuario</label>
           </span>
+        </div>
+        <div class="msg" *ngIf="Login.get('user')?.touched && Login.get('user')?.valid == false">
+          <p-message severity="error" text="Usuario requerido"></p-message>
         </div>
       </div>
       <div class="p-field p-col-12 p-md-4">
@@ -32,12 +35,15 @@
             <i class="pi pi-lock"></i>
           </span>
           <span class="p-float-label">
-            <input type="password" id="Password" pInputText />
+            <input type="password" id="Password" formControlName="password" pInputText />
             <label for="Password">Contraseña</label>
           </span>
         </div>
+        <div class="msg" *ngIf="Login.get('password')?.touched && Login.get('password')?.valid == false">
+          <p-message severity="error" text="Contraseña requerida"></p-message>
+        </div>
       </div>
-      <button pButton type="button" label="Iniciar Sesión"></button>
+      <button pButton type="submit" label="Iniciar Sesión"></button>
     </form>
   </div>
 </div>

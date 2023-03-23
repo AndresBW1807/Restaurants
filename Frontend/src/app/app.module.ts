@@ -1,20 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+//----------------Components------------------------
 import { AppComponent } from './app.component';
 import { LoginComponent } from './Components/login/login.component';
 
-import {FormsModule} from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-
-
-// --------------------PrimeNg----------------------------
+// --------------------PrimeNg-----------------------
 import { AutoCompleteModule } from "primeng/autocomplete";
 import { InputTextareaModule } from "primeng/inputtextarea";
 import { InputTextModule } from "primeng/inputtext";
 import {ButtonModule} from 'primeng/button';
+import {HttpClientModule} from "@angular/common/http";
+import {MessageModule} from "primeng/message";
 
 @NgModule({
   declarations: [
@@ -29,7 +29,10 @@ import {ButtonModule} from 'primeng/button';
     AutoCompleteModule,
     InputTextModule,
     InputTextareaModule,
-    ButtonModule
+    ButtonModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    MessageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

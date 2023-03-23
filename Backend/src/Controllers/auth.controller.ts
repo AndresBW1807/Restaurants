@@ -12,13 +12,12 @@ export const login = async (req: Request, res: Response, next: any) => {
     // Verificar Usuario
     if (!userVer) {
         return res.status(400).json({
-            msg: "El usuario es incorrectos",
+            msg: "El usuario es incorrecto",
         });
     }
 
     //Verificar Contraseña
     const userPass = bcryptjs.compareSync(password, userVer.password);
-    console.log(userPass)
     if(!userPass){
         return res.status(400).json({
             msg: "La contraseña es incorrecta",
