@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {AuthService} from "../../Services/auth.service";
+
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AuthModel} from "../../Models/auth.model";
 import {Router} from "@angular/router";
@@ -14,7 +14,8 @@ export class LoginComponent implements OnInit{
   error: boolean = true
   token: any
   dates = new AuthModel()
-  constructor(private authService: AuthService,
+  constructor(
+              private authService: AuthService,
               private fb: FormBuilder,
               private router: Router) {
   }
