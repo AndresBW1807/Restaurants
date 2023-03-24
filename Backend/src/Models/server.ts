@@ -2,6 +2,7 @@ import express, { Application } from "express";
 import db from "../Db/connection";
 import userRoutes from "../Routes/users.routes";
 import authRoutes from "../Routes/auth.routes";
+import rolMenuRoutes from "../Routes/rolMenu.routes"
 import cors from "cors"
 
 export class Server {
@@ -9,7 +10,8 @@ export class Server {
   private port: string;
   private apiPaths = {
     users: '/api/users',
-    atuh: "/api/auth"
+    atuh: "/api/auth",
+    menu: "/api/rolMenu"
   }
 
   constructor() {
@@ -35,8 +37,8 @@ export class Server {
 
   routes() {
     this.app.use(this.apiPaths.users, userRoutes);
-    this.app.use(this.apiPaths.atuh, authRoutes)
-
+    this.app.use(this.apiPaths.atuh, authRoutes);
+    this.app.use(this.apiPaths.menu, rolMenuRoutes);
   }
 
   listen() {

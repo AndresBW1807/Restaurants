@@ -1,7 +1,5 @@
 import { UserDTO } from "../DTOs/User.Dto";
 import { User } from "../Models/user";
-import * as bcryptjs from "bcryptjs"
-
 export class UserService {
   async find() {
     const users = await User.findAll();

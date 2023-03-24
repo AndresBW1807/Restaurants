@@ -17,11 +17,17 @@ import {ButtonModule} from 'primeng/button';
 import {HttpClientModule} from "@angular/common/http";
 import {MessageModule} from "primeng/message";
 import {JwtHelperService, JwtModule} from "@auth0/angular-jwt";
+import { UserRegisterComponent } from './Components/user-register/user-register.component';
+import { NavbarComponent } from './Components/navbar/navbar.component';
+import {PanelMenuModule} from 'primeng/panelmenu';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    UserRegisterComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +41,7 @@ import {JwtHelperService, JwtModule} from "@auth0/angular-jwt";
     HttpClientModule,
     ReactiveFormsModule,
     MessageModule,
+    PanelMenuModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: () => {
