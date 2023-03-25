@@ -1,7 +1,7 @@
 import { DataTypes, Model } from "sequelize";
 import db from "../Db/connection";
 
-interface UserAttributes{
+interface UserAttributes extends Model{
     nameUser: string,
     lastNameUser: string,
     idNumber: number,
@@ -11,15 +11,8 @@ interface UserAttributes{
     RolId: number
 }
 
-interface UserInstance extends Model<UserAttributes>{
-    nameUser: string,
-    lastNameUser: string,
-    user: string,
-    password: string,
-    idRol: number
-}
 
-export const User = db.define <UserInstance>('users', {
+export const User = db.define <UserAttributes>('users', {
     nameUser: {
         type: DataTypes.STRING
     },

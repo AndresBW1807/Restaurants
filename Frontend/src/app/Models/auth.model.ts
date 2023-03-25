@@ -1,11 +1,14 @@
 import {Injectable} from "@angular/core";
 
 @Injectable()
-export class AuthModel {
-  public password: string;
-  public user: string;
+export class TokenModel {
+  public userName: string;
+  public userLastName: string;
+  public RolId: string;
+
   constructor() {
-    this.password = "";
-    this.user = "";
+    this.RolId = "";
+    this.userName = "";
+    this.userLastName = "";
   }
 }

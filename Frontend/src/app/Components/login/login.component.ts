@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {AuthModel} from "../../Models/auth.model";
 import {Router} from "@angular/router";
+import { AuthModel } from 'src/app/Models/token.model';
 import { AuthService } from 'src/app/Services/auth.service';
 
 @Component({
@@ -27,7 +26,7 @@ export class LoginComponent implements OnInit{
     this.authService.login(this.Login.value.user, this.Login.value.password).subscribe( r => {
       this.token = r
       if(r){
-        this.router.navigate(["/login"])
+        this.router.navigate(["/Nav"])
         console.log(this.token)
         this.error = true
       }
