@@ -14,20 +14,17 @@ import { AutoCompleteModule } from "primeng/autocomplete";
 import { InputTextareaModule } from "primeng/inputtextarea";
 import { InputTextModule } from "primeng/inputtext";
 import {ButtonModule} from 'primeng/button';
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClientModule, HTTP_INTERCEPTORS} from "@angular/common/http";
 import {MessageModule} from "primeng/message";
-import {JwtHelperService, JwtModule} from "@auth0/angular-jwt";
-import { UserRegisterComponent } from './Components/user-register/user-register.component';
-import { NavbarComponent } from './Components/navbar/navbar.component';
+import {JwtModule} from "@auth0/angular-jwt";
 import {PanelMenuModule} from 'primeng/panelmenu';
+import { InterceptorService } from './Services/interceptor.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    UserRegisterComponent,
-    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +47,13 @@ import {PanelMenuModule} from 'primeng/panelmenu';
       }
     })
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

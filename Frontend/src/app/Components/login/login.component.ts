@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit{
       this.token = r
       if(r){
         this.router.navigate(["/login"])
+        console.log(this.token)
         this.error = true
       }
     }

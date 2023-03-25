@@ -6,12 +6,12 @@ export class UserService {
     /*const usersDTOs = users.map(
       (user) => new UserDTO(user.nameUser, user.lastNameUser, user.user)
     );*/
-    return users
+    return users;
   }
 
-  async findOne(id: any){
+  async findOne(id: any) {
     const user = await User.findOne(id);
-    const userDTO = new UserDTO(user.nameUser, user.lastNameUser, user.user)
-    return userDTO
+    const userDTO = new UserDTO(user.nameUser, user.lastNameUser, user.user);
+    return userDTO;
   }
 }

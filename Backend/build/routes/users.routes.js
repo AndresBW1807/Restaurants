@@ -7,5 +7,5 @@ const router = (0, express_1.Router)();
 router.get('/', [
     validationJWT_1.validationJwt
 ], users_controller_1.getUsuarios);
-router.post('/', users_controller_1.postUsuario);
+router.post('/', [validationJWT_1.validationJwt], users_controller_1.postUsuario);
 exports.default = router;
