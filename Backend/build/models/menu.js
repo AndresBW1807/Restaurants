@@ -6,7 +6,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Menu = void 0;
 const sequelize_1 = require("sequelize");
 const connection_1 = __importDefault(require("../Db/connection"));
-const role_1 = require("./role");
+const menuRol_1 = require("./menuRol");
+class menus extends sequelize_1.Model {
+}
 exports.Menu = connection_1.default.define("menus", {
     nameMenu: {
         type: sequelize_1.DataTypes.STRING,
@@ -18,4 +20,4 @@ exports.Menu = connection_1.default.define("menus", {
         type: sequelize_1.DataTypes.STRING,
     },
 });
-role_1.Role.belongsToMany(exports.Menu, { through: "menus_has_roles" });
+menuRol_1.MenuRol.belongsTo(exports.Menu, { foreignKey: "menuId" });

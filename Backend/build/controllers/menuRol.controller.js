@@ -9,23 +9,17 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MenuRolService = void 0;
-const menu_1 = require("../Models/menu");
-const menuRol_1 = require("../Models/menuRol");
-class MenuRolService {
-    findAllMenuRol(roleId) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const menuRol = menuRol_1.MenuRol.findAll({
-                where: { roleId },
-                include: [
-                    {
-                        model: menu_1.Menu,
-                        attributes: ["nameMenu", "iconMenu", "pathMenu"],
-                    },
-                ],
-            });
-            return menuRol;
-        });
+exports.getMenuRol = void 0;
+const menuRol_service_1 = require("../Services/menuRol.service");
+const menuRol = new menuRol_service_1.MenuRolService();
+const getMenuRol = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    const roleId = req.params.roleId;
+    try {
+        const menusRol = yield menuRol.findAllMenuRol(roleId);
+        res.json(menusRol);
     }
-}
-exports.MenuRolService = MenuRolService;
+    catch (error) {
+        next(error);
+    }
+});
+exports.getMenuRol = getMenuRol;
