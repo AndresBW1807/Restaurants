@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getMenuRol = void 0;
+exports.getSubMenu = exports.getMenuRol = void 0;
 const menuRol_service_1 = require("../Services/menuRol.service");
 const menuRol = new menuRol_service_1.MenuRolService();
 const getMenuRol = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
@@ -23,3 +23,15 @@ const getMenuRol = (req, res, next) => __awaiter(void 0, void 0, void 0, functio
     }
 });
 exports.getMenuRol = getMenuRol;
+const getSubMenu = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    const menuId = req.params.menuId;
+    try {
+        const submenus = yield menuRol.findAllSubMenu(menuId);
+        res.json(submenus);
+    }
+    catch (error) {
+        console.log(error);
+        next(error);
+    }
+});
+exports.getSubMenu = getSubMenu;

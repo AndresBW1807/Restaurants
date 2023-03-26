@@ -1,9 +1,10 @@
 import { Router } from "express";
-import { getMenuRol } from "../Controllers/menuRol.controller";
+import { getMenuRol, getSubMenu } from "../Controllers/menuRol.controller";
 import { validationJwt } from "../Middleware/validationJWT";
 
 const router = Router();
 
-router.get("/:roleId", getMenuRol);
+router.get("/:roleId",[validationJwt], getMenuRol);
+router.get("/subMenu/:menuId", [validationJwt], getSubMenu)
 
 export default router;

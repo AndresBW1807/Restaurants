@@ -12,6 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.MenuRolService = void 0;
 const menu_1 = require("../Models/menu");
 const menuRol_1 = require("../Models/menuRol");
+const submenu_1 = require("../Models/submenu");
 class MenuRolService {
     findAllMenuRol(roleId) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -25,6 +26,12 @@ class MenuRolService {
                 ],
             });
             return menuRol;
+        });
+    }
+    findAllSubMenu(menuId) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const submenus = submenu_1.SubMenu.findAll({ where: { menuId } });
+            return submenus;
         });
     }
 }
