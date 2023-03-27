@@ -9,7 +9,7 @@ export class MenuRolService {
       include: [
         {
           model: Menu,
-          attributes: ["nameMenu", "iconMenu", "pathMenu"],
+          attributes: ["nameMenu", "iconMenu"],
         },
       ],
     });

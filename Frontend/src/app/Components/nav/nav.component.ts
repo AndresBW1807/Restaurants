@@ -32,12 +32,15 @@ export class NavComponent implements OnInit {
           const menu = {
             label: m.menu.nameMenu,
             icon: m.menu.iconMenu,
-            path: m.menu.pathMenu,
             items: subItems
           };
           this.items.push(menu);
         });
       });
     });
+  }
+
+  Logout(){
+    this.authService.logout();
   }
 }

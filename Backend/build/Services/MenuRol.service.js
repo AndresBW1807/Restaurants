@@ -21,7 +21,7 @@ class MenuRolService {
                 include: [
                     {
                         model: menu_1.Menu,
-                        attributes: ["nameMenu", "iconMenu", "pathMenu"],
+                        attributes: ["nameMenu", "iconMenu"],
                     },
                 ],
             });

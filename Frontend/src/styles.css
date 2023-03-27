@@ -8,3 +8,9 @@ body{
 .p-inline-message{
   width: 100% !important;
 }
+
+
+.p-panelmenu-header-link {
+  background-color: #86bc6c !important;
+  color: azure !important;
+}

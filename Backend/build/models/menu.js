@@ -15,9 +15,6 @@ exports.Menu = connection_1.default.define("menus", {
     },
     iconMenu: {
         type: sequelize_1.DataTypes.STRING,
-    },
-    pathMenu: {
-        type: sequelize_1.DataTypes.STRING,
-    },
+    }
 });
 menuRol_1.MenuRol.belongsTo(exports.Menu, { foreignKey: "menuId" });

@@ -1,0 +1,50 @@
+.card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.sup {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.logo {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 10%;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+}
+
+.inf {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.inf i {
+    font-size: 50px;
+    color: green;
+}
+
+
+.inf .cerrar {
+    margin-top: 15%;
+    text-decoration: none;
+    color: black;
+    margin-bottom: 30%;
+}
+
+.inf .cerrar:hover {
+    color: green;
+}
+
