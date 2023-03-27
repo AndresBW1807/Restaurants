@@ -20,4 +20,10 @@ export class NavService {
     }))
   }
 
+  getSubMenus(menuId: any){
+    return this.http.get(this.serviceUrl + "/api/rolMenu/subMenu/" + menuId).pipe(map(r => {
+      return r as any[]
+    }))
+  }
+
 }

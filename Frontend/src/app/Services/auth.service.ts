@@ -21,7 +21,6 @@ export class AuthService {
       if(r.token){
         const token = r.token
         localStorage.setItem("token", token)
-        this.isLoggedIn = true
         return token
       }else{
         return "usuario no valido"
@@ -31,7 +30,6 @@ export class AuthService {
 
   logout(): void {
     localStorage.removeItem('token');
-    this.isLoggedIn = false
   }
 
   getLoggedUser(){
@@ -45,9 +43,5 @@ export class AuthService {
 
   getToken(){
     return localStorage.getItem('token');
-  }
-
-  isAuthenticated(): boolean {
-    return this.isLoggedIn;
   }
 }
