@@ -10,8 +10,10 @@ import { InterceptorService } from './Services/interceptor.service';
 
 //----------------Components------------------------
 import { AppComponent } from './app.component';
-import { LoginComponent } from './Components/login/login.component';
-import { NavComponent } from './Components/nav/nav.component';
+import { LoginComponent } from './Components/Utilities/login/login.component';
+import { UserCreateComponent } from './Components/User/user-create/user-create.component';
+import { NavComponent } from './Components/Utilities/nav/nav.component';
+
 
 
 // --------------------PrimeNg-----------------------
@@ -21,7 +23,8 @@ import { InputTextModule } from "primeng/inputtext";
 import {ButtonModule} from 'primeng/button';
 import {MessageModule} from "primeng/message";
 import {PanelMenuModule} from 'primeng/panelmenu';
-import { UserCreateComponent } from './Components/user-create/user-create.component';
+import { FieldsetModule } from 'primeng/fieldset';
+
 
 
 
@@ -46,6 +49,7 @@ import { UserCreateComponent } from './Components/user-create/user-create.compon
     ReactiveFormsModule,
     MessageModule,
     PanelMenuModule,
+    FieldsetModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: () => {

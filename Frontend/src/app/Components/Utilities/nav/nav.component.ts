@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { TokenModel } from 'src/app/Models/auth.model';
 import { AuthService } from 'src/app/Services/auth.service';
-import { NavService } from '../../Services/nav.service';
+import { NavService } from '../../../Services/nav.service';
 import { forkJoin } from 'rxjs';
 
 @Component({

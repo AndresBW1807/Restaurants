@@ -1,0 +1,26 @@
+.form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p-fieldset{
+    width: 70% !important;
+}
+
+.input{
+    width: 100%;
+    margin-right: 10%;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5%;
+}
+
+.msg{
+    margin-bottom: 5%;
+}

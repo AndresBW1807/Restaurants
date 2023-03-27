@@ -1,0 +1,50 @@
+<div class="form">
+  <p-fieldset legend="Crear nuevo usuario">
+    <form (onSubmit)="onSubmit()" [formGroup]="userCreate">
+      <div class="input">
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon">
+            <i class="pi pi-user"></i>
+          </span>
+          <span class="p-float-label">
+            <input type="text" id="Name" formControlName="name" pInputText />
+            <label for="Name">Nombres</label>
+          </span>
+        </div>
+        <div class="msg">
+          <p-message severity="error" text="Nombres requeridos"></p-message>
+        </div>
+      </div>
+
+      <div class="input">
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon">
+            <i class="pi pi-user"></i>
+          </span>
+          <span class="p-float-label">
+            <input type="text" id="LastName" formControlName="lastname" pInputText />
+            <label for="LastName">Apellidos</label>
+          </span>
+        </div>
+        <div class="msg">
+          <p-message severity="error" text="Apellidos requeridos"></p-message>
+        </div>
+      </div>
+
+      <div class="input">
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon">
+            <i class="pi pi-user"></i>
+          </span>
+          <span class="p-float-label">
+            <input type="text" id="IdNumber" formControlName="idnumber" pInputText />
+            <label for="IdNumber">Numero de Identificación</label>
+          </span>
+        </div>
+        <div class="msg">
+          <p-message severity="error" text="El numero de identificaion debe contener minimo 8"></p-message>
+        </div>
+      </div>
+    </form>
+  </p-fieldset>
+</div>
