@@ -21,6 +21,8 @@ import { InputTextModule } from "primeng/inputtext";
 import {ButtonModule} from 'primeng/button';
 import {MessageModule} from "primeng/message";
 import {PanelMenuModule} from 'primeng/panelmenu';
+import { UserCreateComponent } from './Components/user-create/user-create.component';
+
 
 
 
@@ -29,6 +31,7 @@ import {PanelMenuModule} from 'primeng/panelmenu';
     AppComponent,
     LoginComponent,
     NavComponent,
+    UserCreateComponent,
   ],
   imports: [
     BrowserModule,

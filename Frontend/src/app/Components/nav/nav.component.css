@@ -3,7 +3,10 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .sup {
@@ -14,12 +17,14 @@
 
 
 .logo {
-    width: 120px;
+    margin-top: 10%;
+    width: 180px;
     height: 120px;
     margin-bottom: 10%;
 }
 
 .logo img {
+    object-fit: contain;
     width: 100%;
     height: 100%;
 }
@@ -32,13 +37,13 @@
 }
 
 .inf i {
-    font-size: 50px;
+    font-size: 30px;
     color: green;
 }
 
 
 .inf .cerrar {
-    margin-top: 15%;
+    margin-top: 5%;
     text-decoration: none;
     color: black;
     margin-bottom: 30%;

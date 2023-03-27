@@ -9,8 +9,34 @@ body{
   width: 100% !important;
 }
 
-
+/* Navbar */
 .p-panelmenu-header-link {
   background-color: #86bc6c !important;
   color: azure !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+}
+
+.sup .p-component {
+  width: 100% !important;
+  height: 50% !important;
+}
+
+.Pl {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+.nav {
+  background-color: #caeabb;
+  width: 20%;
+  min-width: 280px;
+  height: 100%;
+}
+
+.information {
+  border-left: 2px solid #86bc6c;
+  width: 80%;
+  height: 100%;
 }
