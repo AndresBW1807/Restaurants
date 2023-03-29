@@ -24,6 +24,7 @@ import {ButtonModule} from 'primeng/button';
 import {MessageModule} from "primeng/message";
 import {PanelMenuModule} from 'primeng/panelmenu';
 import { FieldsetModule } from 'primeng/fieldset';
+import { DropdownModule } from 'primeng/dropdown';
 
 
 
@@ -50,6 +51,7 @@ import { FieldsetModule } from 'primeng/fieldset';
     MessageModule,
     PanelMenuModule,
     FieldsetModule,
+    DropdownModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: () => {

@@ -24,3 +24,7 @@ form {
 .msg{
     margin-bottom: 5%;
 }
+
+.p-inputgroup .p-inputtext, .p-fluid .p-inputgroup .p-inputtext, .p-inputgroup .p-inputwrapper, .p-inputgroup .p-inputwrapper>.p-component {
+    width: 100% !important;
+}

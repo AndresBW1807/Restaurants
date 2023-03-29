@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+interface DocumentType {
+  name: string;
+  code: string;
+}
 @Component({
   selector: 'app-user-create',
   templateUrl: './user-create.component.html',
@@ -9,12 +13,17 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class UserCreateComponent implements OnInit{
 
   userCreate!: FormGroup
+  document!: DocumentType[]
 
   constructor(private fb: FormBuilder,){
   }
 
   ngOnInit(): void {
       this.userCreate = this.initForm();
+      this.document = [
+        { name: 'Cedula de ciudadania', code: 'C.C' },
+        { name: 'Tarjeta de identidad', code: 'T.I' },
+    ];
   }
 
   onSubmit(){
