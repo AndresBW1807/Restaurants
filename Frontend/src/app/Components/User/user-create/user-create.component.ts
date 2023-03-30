@@ -9,43 +9,33 @@ interface DocumentType {
 @Component({
   selector: 'app-user-create',
   templateUrl: './user-create.component.html',
-  styleUrls: ['./user-create.component.css']
+  styleUrls: ['./user-create.component.css'],
 })
-export class UserCreateComponent implements OnInit{
+export class UserCreateComponent implements OnInit {
+  userCreate!: FormGroup;
+  document!: DocumentType[];
+  roles: any[] = [];
 
-  userCreate!: FormGroup
-  document!: DocumentType[]
-  roles: DocumentType[] = []
-
-  constructor(private fb: FormBuilder, private rolService: RolsService){
-  }
+  constructor(private fb: FormBuilder, private rolService: RolsService) {}
 
   ngOnInit(): void {
+    this.roles = [
+      { name: 'Seleccione un Rol', code: "" },
+      { name: 'Administrador', code: 1 },
+      { name: 'Empleado', code: 2 },
+      { name: 'Comensal', code: 3 },
+    ];
 
-
-      this.rolService.getAllRoles().subscribe(r => {
-        r.forEach((e: any) => {
-          const rols = {
-            name: e.nameRol,
-            code: e.id
-          }
-          this.roles.push(rols)
-        });
-      })
-
-
-      console.log(this.roles)
-      this.document = [
-        { name: 'Cedula de ciudadania', code: 'C.C' },
-        { name: 'Tarjeta de identidad', code: 'T.I' },
+    this.document = [
+      { name: "Seleccione su tipo de documento", code: "" },
+      { name: 'Cedula de ciudadania', code: 'C.C' },
+      { name: 'Tarjeta de identidad', code: 'T.I' },
     ];
 
     this.userCreate = this.initForm();
   }
 
-  onSubmit(){
-
-  }
+  onSubmit() {}
 
   initForm(): FormGroup {
     return this.fb.group({

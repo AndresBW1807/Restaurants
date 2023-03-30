@@ -68,6 +68,12 @@
             <p-dropdown [options]="document" optionLabel="name"></p-dropdown>
           </span>
         </div>
+        <div class="msg">
+          <p-message
+            severity="error"
+            text="Debe seleccionar el tipo de documento"
+          ></p-message>
+        </div>
       </div>
 
       <div class="input">
@@ -76,12 +82,7 @@
             <i class="pi pi-users"></i>
           </span>
           <span class="p-float-label">
-            <input
-              type="text"
-              id="User"
-              formControlName="user"
-              pInputText
-            />
+            <input type="text" id="User" formControlName="user" pInputText />
             <label for="User">Usuario</label>
           </span>
         </div>
@@ -122,11 +123,19 @@
             <i class="pi pi-id-card"></i>
           </span>
           <span class="p-float-label">
-            <p-dropdown [options]="roles" optionLabel="Cargo"></p-dropdown>
+            <p-dropdown [options]="roles" optionLabel="name"></p-dropdown>
           </span>
         </div>
+        <div class="msg">
+          <p-message
+            severity="error"
+            text="Debe seleccionar un rol para el usuario"
+          ></p-message>
+        </div>
       </div>
-
+      <div class="butt">
+        <button pButton type="submit" label="Guardar Usuario"></button>
+      </div>
     </form>
   </p-fieldset>
 </div>

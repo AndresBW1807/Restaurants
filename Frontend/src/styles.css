@@ -47,3 +47,7 @@ body{
   width: 100% !important;
   margin: 0;
 }
+
+.form fieldset {
+  min-height: 650px !important;
+}
