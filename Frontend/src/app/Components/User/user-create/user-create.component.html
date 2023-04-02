@@ -1,105 +1,105 @@
 <div class="form">
   <p-fieldset legend="Crear nuevo usuario">
-    <form (onSubmit)="onSubmit()" [formGroup]="userCreate">
-      <div class="input">
-        <div class="p-inputgroup">
+      <form (ngSubmit)="userCreate.valid && onSubmit()" [formGroup]="userCreate" #userSubmit="ngForm">
+        <div class="input">
+          <div class="p-inputgroup">
           <span class="p-inputgroup-addon">
             <i class="pi pi-user"></i>
           </span>
-          <span class="p-float-label">
-            <input type="text" id="Name" formControlName="name" pInputText />
+            <span class="p-float-label">
+            <input type="text" id="Name" formControlName="nameUser" pInputText/>
             <label for="Name">Nombres</label>
           </span>
+          </div>
+          <div class="msg" *ngIf="userCreate.get('nameUser')?.touched && userCreate.get('nameUser')?.valid == false">
+            <p-message severity="error" text="El campo nombres no puede estar vacio"></p-message>
+          </div>
         </div>
-        <div class="msg">
-          <p-message severity="error" text="Nombres requeridos"></p-message>
-        </div>
-      </div>
 
-      <div class="input">
-        <div class="p-inputgroup">
+        <div class="input">
+          <div class="p-inputgroup">
           <span class="p-inputgroup-addon">
             <i class="pi pi-user"></i>
           </span>
-          <span class="p-float-label">
+            <span class="p-float-label">
             <input
               type="text"
               id="LastName"
-              formControlName="lastname"
+              formControlName="lastNameUser"
               pInputText
             />
             <label for="LastName">Apellidos</label>
           </span>
+          </div>
+          <div class="msg" *ngIf="userCreate.get('lastNameUser')?.touched && userCreate.get('lastNameUser')?.valid == false">
+            <p-message severity="error" text="El campo apellidos no puede estar vacio"></p-message>
+          </div>
         </div>
-        <div class="msg">
-          <p-message severity="error" text="Apellidos requeridos"></p-message>
-        </div>
-      </div>
 
-      <div class="input">
-        <div class="p-inputgroup">
+        <div class="input">
+          <div class="p-inputgroup">
           <span class="p-inputgroup-addon">
             <i class="pi pi-id-card"></i>
           </span>
-          <span class="p-float-label">
+            <span class="p-float-label">
             <input
-              type="text"
+              type="number"
               id="IdNumber"
-              formControlName="idnumber"
+              formControlName="idNumber"
               pInputText
             />
             <label for="IdNumber">Numero de Identificación</label>
           </span>
+          </div>
+          <div class="msg" *ngIf="userCreate.get('idNumber')?.touched && userCreate.get('idNumber')?.valid == false">
+            <p-message
+              severity="error"
+              text="El numero de identificaion debe registrarse con solo numeros y deben ser minimo 8 caracteres"
+            ></p-message>
+          </div>
         </div>
-        <div class="msg">
-          <p-message
-            severity="error"
-            text="El numero de identificaion debe contener minimo 8 caracteres"
-          ></p-message>
-        </div>
-      </div>
 
-      <div class="input">
-        <div class="p-inputgroup">
+        <div class="input">
+          <div class="p-inputgroup">
           <span class="p-inputgroup-addon">
             <i class="pi pi-id-card"></i>
           </span>
-          <span class="p-float-label">
-            <p-dropdown [options]="document" optionLabel="name"></p-dropdown>
+            <span class="p-float-label">
+            <p-dropdown [options]="document" placeholder="Seleccione un tipo de documento" formControlName="typeId" optionLabel="name"></p-dropdown>
           </span>
+          </div>
+          <div class="msg" *ngIf="userCreate.get('typeId')?.touched && userCreate.get('typeId')?.valid == false">
+            <p-message
+              severity="error"
+              text="Debe seleccionar el tipo de documento"
+            ></p-message>
+          </div>
         </div>
-        <div class="msg">
-          <p-message
-            severity="error"
-            text="Debe seleccionar el tipo de documento"
-          ></p-message>
-        </div>
-      </div>
 
-      <div class="input">
-        <div class="p-inputgroup">
+        <div class="input">
+          <div class="p-inputgroup">
           <span class="p-inputgroup-addon">
             <i class="pi pi-users"></i>
           </span>
-          <span class="p-float-label">
-            <input type="text" id="User" formControlName="user" pInputText />
+            <span class="p-float-label">
+            <input type="text" id="User" formControlName="user" pInputText/>
             <label for="User">Usuario</label>
           </span>
+          </div>
+          <div class="msg" *ngIf="userCreate.get('user')?.touched && userCreate.get('user')?.valid == false">
+            <p-message
+              severity="error"
+              text="El usuario es requerido"
+            ></p-message>
+          </div>
         </div>
-        <div class="msg">
-          <p-message
-            severity="error"
-            text="El usuario es requerido"
-          ></p-message>
-        </div>
-      </div>
 
-      <div class="input">
-        <div class="p-inputgroup">
+        <div class="input">
+          <div class="p-inputgroup">
           <span class="p-inputgroup-addon">
             <i class="pi pi-lock"></i>
           </span>
-          <span class="p-float-label">
+            <span class="p-float-label">
             <input
               type="password"
               id="Password"
@@ -108,34 +108,41 @@
             />
             <label for="Password">Contraseña</label>
           </span>
+          </div>
+          <div class="msg" *ngIf="userCreate.get('password')?.touched && userCreate.get('password')?.valid == false">
+            <p-message
+              severity="error"
+              text="La contraseña debe contener minimo 8 caracteres una, letra mayuscula y un numero"
+            ></p-message>
+          </div>
         </div>
-        <div class="msg">
-          <p-message
-            severity="error"
-            text="La contraseña debe contener minimo 8 caracteres una, letra mayuscula y un numero"
-          ></p-message>
-        </div>
-      </div>
 
-      <div class="input">
-        <div class="p-inputgroup">
+        <div class="inputU">
+          <div class="p-inputgroup">
           <span class="p-inputgroup-addon">
             <i class="pi pi-id-card"></i>
           </span>
-          <span class="p-float-label">
-            <p-dropdown [options]="roles" optionLabel="name"></p-dropdown>
+            <span class="p-float-label">
+            <p-dropdown [options]="roles" formControlName="RolId" placeholder="Seleccione el rol del usuario" optionLabel="name"></p-dropdown>
           </span>
+          </div>
+          <div class="msgU" *ngIf="userCreate.get('RolId')?.touched && userCreate.get('RolId')?.valid == false">
+            <p-message
+              severity="error"
+              text="Debe seleccionar un rol para el usuario"
+            ></p-message>
+          </div>
         </div>
-        <div class="msg">
-          <p-message
-            severity="error"
-            text="Debe seleccionar un rol para el usuario"
-          ></p-message>
+        <div class="butt">
+          <button pButton type="submit" label="Guardar Usuario"></button>
+          <div class="advertencia" *ngIf="!userCreate.valid  && userSubmit.submitted">
+            <p-message
+              severity="error"
+              text="Todos los campos deben ser llenados"
+            ></p-message>
+          </div>
         </div>
-      </div>
-      <div class="butt">
-        <button pButton type="submit" label="Guardar Usuario"></button>
-      </div>
-    </form>
+
+      </form>
   </p-fieldset>
 </div>

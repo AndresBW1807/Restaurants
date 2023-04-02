@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { RolsService } from 'src/app/Services/rols.service';
+import {UserModel} from "../../../Models/user.model";
+import {UsersService} from "../../../Services/users.service";
 
 interface DocumentType {
   name: string;
-  code: string;
+  value: string;
 }
 @Component({
   selector: 'app-user-create',
@@ -15,32 +16,41 @@ export class UserCreateComponent implements OnInit {
   userCreate!: FormGroup;
   document!: DocumentType[];
   roles: any[] = [];
+  user!: UserModel;
 
-  constructor(private fb: FormBuilder, private rolService: RolsService) {}
+  constructor(private fb: FormBuilder, private userService: UsersService) {}
 
   ngOnInit(): void {
     this.roles = [
-      { name: 'Seleccione un Rol', code: "" },
-      { name: 'Administrador', code: 1 },
-      { name: 'Empleado', code: 2 },
-      { name: 'Comensal', code: 3 },
+      { name: 'Administrador', value: 1 },
+      { name: 'Empleado', value: 2 },
+      { name: 'Comensal', value: 3 },
     ];
 
     this.document = [
-      { name: "Seleccione su tipo de documento", code: "" },
-      { name: 'Cedula de ciudadania', code: 'C.C' },
-      { name: 'Tarjeta de identidad', code: 'T.I' },
+      { name: 'Cedula de ciudadania', value: 'C.C' },
+      { name: 'Tarjeta de identidad', value: 'T.I' },
     ];
 
     this.userCreate = this.initForm();
   }
 
-  onSubmit() {}
+  onSubmit() {
+    this.user = this.userCreate.value
+    this.user.RolId = this.userCreate.value.RolId.value
+    this.user.typeId = this.userCreate.value.typeId.value
+    this.userService.addUser(this.user).subscribe(r => console.log(r))
+  }
 
   initForm(): FormGroup {
     return this.fb.group({
-      user: ['', [Validators.required]],
-      password: ['', [Validators.required]],
+      nameUser: ['', [Validators.required]],
+      lastNameUser: ['', [Validators.required]],
+      idNumber: ['', [Validators.required, Validators.pattern(/^[0-9]{8,}$/)]],
+      typeId: ['', [Validators.required]],
+      user: ['',[Validators.required]],
+      password: ['',[Validators.required, Validators.pattern(/^(?=.*[A-Z])(?=.*\d).{6,}$/)]],
+      RolId: ['', [Validators.required]],
     });
   }
 }
