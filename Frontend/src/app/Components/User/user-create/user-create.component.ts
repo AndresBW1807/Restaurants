@@ -39,7 +39,7 @@ export class UserCreateComponent implements OnInit {
     this.user = this.userCreate.value
     this.user.RolId = this.userCreate.value.RolId.value
     this.user.typeId = this.userCreate.value.typeId.value
-    this.userService.addUser(this.user).subscribe(r => console.log(r))
+    this.userService.addUser(this.user).subscribe()
   }
 
   initForm(): FormGroup {
