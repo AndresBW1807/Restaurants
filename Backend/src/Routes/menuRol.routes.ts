@@ -7,4 +7,4 @@ const router = Router();
 router.get("/:roleId",[validationJwt], getMenuRol);
 router.get("/subMenu/:menuId", [validationJwt], getSubMenu)
 
-export default router;
+export default router

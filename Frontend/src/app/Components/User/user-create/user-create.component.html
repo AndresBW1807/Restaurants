@@ -1,3 +1,4 @@
+<p-messages [(value)]="Messages" [enableService]="false" [closable]="true"></p-messages>
 <div class="form">
   <p-fieldset legend="Crear nuevo usuario">
       <form (ngSubmit)="userCreate.valid && onSubmit()" [formGroup]="userCreate" #userSubmit="ngForm">
@@ -11,7 +12,7 @@
             <label for="Name">Nombres</label>
           </span>
           </div>
-          <div class="msg" *ngIf="userCreate.get('nameUser')?.touched && userCreate.get('nameUser')?.valid == false">
+          <div class="msg" *ngIf="userCreate.get('nameUser')?.touched && userCreate.get('nameUser')?.valid == false && sumbit || userCreate.get('nameUser')?.valid == false && userSubmit.submitted && sumbit ">
             <p-message severity="error" text="El campo nombres no puede estar vacio"></p-message>
           </div>
         </div>
@@ -31,7 +32,7 @@
             <label for="LastName">Apellidos</label>
           </span>
           </div>
-          <div class="msg" *ngIf="userCreate.get('lastNameUser')?.touched && userCreate.get('lastNameUser')?.valid == false">
+          <div class="msg" *ngIf="userCreate.get('lastNameUser')?.touched && userCreate.get('lastNameUser')?.valid == false && sumbit  || userCreate.get('lastNameUser')?.valid == false && userSubmit.submitted && sumbit ">
             <p-message severity="error" text="El campo apellidos no puede estar vacio"></p-message>
           </div>
         </div>
@@ -51,7 +52,7 @@
             <label for="IdNumber">Numero de Identificación</label>
           </span>
           </div>
-          <div class="msg" *ngIf="userCreate.get('idNumber')?.touched && userCreate.get('idNumber')?.valid == false">
+          <div class="msg" *ngIf="userCreate.get('idNumber')?.touched && userCreate.get('idNumber')?.valid == false && sumbit || userCreate.get('idNumber')?.valid == false && userSubmit.submitted && sumbit ">
             <p-message
               severity="error"
               text="El numero de identificaion debe registrarse con solo numeros y deben ser minimo 8 caracteres"
@@ -68,7 +69,7 @@
             <p-dropdown [options]="document" placeholder="Seleccione un tipo de documento" formControlName="typeId" optionLabel="name"></p-dropdown>
           </span>
           </div>
-          <div class="msg" *ngIf="userCreate.get('typeId')?.touched && userCreate.get('typeId')?.valid == false">
+          <div class="msg" *ngIf="userCreate.get('typeId')?.touched && userCreate.get('typeId')?.valid == false && sumbit || userCreate.get('typeId')?.valid == false && userSubmit.submitted && sumbit ">
             <p-message
               severity="error"
               text="Debe seleccionar el tipo de documento"
@@ -86,7 +87,7 @@
             <label for="User">Usuario</label>
           </span>
           </div>
-          <div class="msg" *ngIf="userCreate.get('user')?.touched && userCreate.get('user')?.valid == false">
+          <div class="msg" *ngIf="userCreate.get('user')?.touched && userCreate.get('user')?.valid == false && sumbit || userCreate.get('user')?.valid == false && userSubmit.submitted && sumbit ">
             <p-message
               severity="error"
               text="El usuario es requerido"
@@ -109,7 +110,7 @@
             <label for="Password">Contraseña</label>
           </span>
           </div>
-          <div class="msg" *ngIf="userCreate.get('password')?.touched && userCreate.get('password')?.valid == false">
+          <div class="msg" *ngIf="userCreate.get('password')?.touched && userCreate.get('password')?.valid == false && sumbit || userCreate.get('password')?.valid == false && userSubmit.submitted && sumbit ">
             <p-message
               severity="error"
               text="La contraseña debe contener minimo 8 caracteres una, letra mayuscula y un numero"
@@ -126,7 +127,7 @@
             <p-dropdown [options]="roles" formControlName="RolId" placeholder="Seleccione el rol del usuario" optionLabel="name"></p-dropdown>
           </span>
           </div>
-          <div class="msgU" *ngIf="userCreate.get('RolId')?.touched && userCreate.get('RolId')?.valid == false">
+          <div class="msgU" *ngIf="userCreate.get('RolId')?.touched && userCreate.get('RolId')?.valid == false && sumbit || userCreate.get('RolId')?.valid == false && userSubmit.submitted && sumbit">
             <p-message
               severity="error"
               text="Debe seleccionar un rol para el usuario"
@@ -135,14 +136,7 @@
         </div>
         <div class="butt">
           <button pButton type="submit" label="Guardar Usuario"></button>
-          <div class="advertencia" *ngIf="!userCreate.valid  && userSubmit.submitted">
-            <p-message
-              severity="error"
-              text="Todos los campos deben ser llenados"
-            ></p-message>
-          </div>
         </div>
-
       </form>
   </p-fieldset>
 </div>

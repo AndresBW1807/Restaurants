@@ -25,9 +25,7 @@ import {MessageModule} from "primeng/message";
 import {PanelMenuModule} from 'primeng/panelmenu';
 import { FieldsetModule } from 'primeng/fieldset';
 import { DropdownModule } from 'primeng/dropdown';
-
-
-
+import { MessagesModule } from 'primeng/messages';
 
 
 @NgModule({
@@ -52,6 +50,7 @@ import { DropdownModule } from 'primeng/dropdown';
     PanelMenuModule,
     FieldsetModule,
     DropdownModule,
+    MessagesModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: () => {

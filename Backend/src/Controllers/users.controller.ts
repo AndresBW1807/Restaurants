@@ -26,5 +26,6 @@ export const postUsuario = async (req: Request, res: Response, next: any) => {
     res.json(user);
   } catch (error) {
     next(error);
+    console.log(error)
   }
 };

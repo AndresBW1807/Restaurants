@@ -17,6 +17,10 @@ export class UserCreateComponent implements OnInit {
   document!: DocumentType[];
   roles: any[] = [];
   user!: UserModel;
+  Modal = false;
+  Messages!: any[];
+  sumbit= true;
+
 
   constructor(private fb: FormBuilder, private userService: UsersService) {}
 
@@ -39,7 +43,24 @@ export class UserCreateComponent implements OnInit {
     this.user = this.userCreate.value
     this.user.RolId = this.userCreate.value.RolId.value
     this.user.typeId = this.userCreate.value.typeId.value
-    this.userService.addUser(this.user).subscribe()
+    this.userService.addUser(this.user).subscribe( r => {
+      this.Modal = true;
+      this.Messages = [ {
+        severity: 'success',
+        summary: 'Registrado',
+        detail: 'Usuario registrado con exito'
+      }]
+      this.userCreate.reset()
+      this.sumbit = false;
+    })
+    if (!this.Messages){
+      this.Modal == true;
+      this.Messages = [ {
+        severity: 'error',
+        summary: 'No registrado',
+        detail: 'EL usuario ya se registro anterirormente'
+      }]
+    }
   }
 
   initForm(): FormGroup {

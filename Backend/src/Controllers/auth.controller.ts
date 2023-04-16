@@ -23,6 +23,7 @@ export const login = async (req: Request, res: Response, next: any) => {
       msg: "La contraseña es incorrecta",
     });
   }
+
   //Payload
   const payload = {
     nameUser: userVer.nameUser,
