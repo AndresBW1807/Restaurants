@@ -61,6 +61,9 @@ export class UserCreateComponent implements OnInit {
         detail: 'EL usuario ya se registro anterirormente'
       }]
     }
+    setTimeout(() => {
+      this.Modal = false
+    },5000)
   }
 
   initForm(): FormGroup {

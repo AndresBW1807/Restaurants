@@ -4,7 +4,7 @@ import {Injectable} from "@angular/core";
 export class UserModel {
   public nameUser: string;
   public lastNameUser: string;
-  public idNumber: number;
+  public idNumber: string;
   public typeId: string;
   public password: string;
   public user: string;
@@ -12,7 +12,7 @@ export class UserModel {
   constructor() {
     this.nameUser = "";
     this.lastNameUser = "";
-    this.idNumber = 0;
+    this.idNumber = "";
     this.typeId = "";
     this.password = "";
     this.user = "";

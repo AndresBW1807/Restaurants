@@ -59,6 +59,7 @@ const postUsuario = (req, res, next) => __awaiter(void 0, void 0, void 0, functi
     }
     catch (error) {
         next(error);
+        console.log(error);
     }
 });
 exports.postUsuario = postUsuario;
