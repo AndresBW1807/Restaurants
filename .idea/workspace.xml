@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c95d5a62-a797-4b1f-8bdf-7bdeff01c450" name="Changes" comment="check list inicio">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="c95d5a62-a797-4b1f-8bdf-7bdeff01c450" name="Changes" comment="union de estudiante a una carrera">
       <change beforePath="$PROJECT_DIR$/Backend/build/Controllers/auth.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Controllers/auth.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Controllers/menuRol.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Controllers/menuRol.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Controllers/users.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Controllers/users.controller.js" afterDir="false" />
@@ -20,8 +19,6 @@
       <change beforePath="$PROJECT_DIR$/Backend/build/Routes/users.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Routes/users.routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Services/MenuRol.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Services/MenuRol.service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Services/User.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Services/User.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/ModelDb.mwb" beforeDir="false" afterPath="$PROJECT_DIR$/DB/ModelDb.mwb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/ModelDb.mwb.bak" beforeDir="false" afterPath="$PROJECT_DIR$/DB/ModelDb.mwb.bak" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,6 +100,7 @@
       <workItem from="1681660973315" duration="8294000" />
       <workItem from="1681679970473" duration="3277000" />
       <workItem from="1683032047591" duration="5000" />
+      <workItem from="1684603441795" duration="1444000" />
     </task>
     <task id="LOCAL-00001" summary="Union de back login con front login">
       <created>1679600760916</created>
@@ -139,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682898304215</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="union de estudiante a una carrera">
+      <created>1684697009549</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1684697009549</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,6 +167,7 @@
     <MESSAGE value="Menu navbar con principales rutas" />
     <MESSAGE value="Fix" />
     <MESSAGE value="check list inicio" />
-    <option name="LAST_COMMIT_MESSAGE" value="check list inicio" />
+    <MESSAGE value="union de estudiante a una carrera" />
+    <option name="LAST_COMMIT_MESSAGE" value="union de estudiante a una carrera" />
   </component>
 </project>
