@@ -18,3 +18,6 @@ export const Campus = db.define<campus>("campus", {
         type: DataTypes.NUMBER
     }
 });
+
+
+

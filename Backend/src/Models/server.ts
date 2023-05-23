@@ -6,6 +6,7 @@ import menuRolRoutes from "../Routes/menuRol.routes";
 import rolRoutes from "../Routes/rol.routes";
 import campusRoutes from "../Routes/campus.routes";
 import courseRoutes from "../Routes/course.routes";
+import campusCourseRoutes from "../Routes/campusCourse.routes";
 import cors from "cors"
 
 export class Server {
@@ -16,8 +17,9 @@ export class Server {
         atuh: "/api/auth",
         menuRol: "/api/rolMenu",
         rol: "/api/rol",
-        campus: "api/campus",
-        course: "api/course"
+        campus: "/api/campus",
+        course: "/api/course",
+        campusCourse: '/api/campusCourse'
     }
 
     constructor() {
@@ -48,6 +50,7 @@ export class Server {
         this.app.use(this.apiPaths.rol, rolRoutes);
         this.app.use(this.apiPaths.campus, campusRoutes);
         this.app.use(this.apiPaths.course, courseRoutes);
+        this.app.use(this.apiPaths.campusCourse, campusCourseRoutes);
     }
 
     listen() {

@@ -21,6 +21,7 @@ const menuRol_routes_1 = __importDefault(require("../Routes/menuRol.routes"));
 const rol_routes_1 = __importDefault(require("../Routes/rol.routes"));
 const campus_routes_1 = __importDefault(require("../Routes/campus.routes"));
 const course_routes_1 = __importDefault(require("../Routes/course.routes"));
+const campusCourse_routes_1 = __importDefault(require("../Routes/campusCourse.routes"));
 const cors_1 = __importDefault(require("cors"));
 class Server {
     constructor() {
@@ -29,8 +30,9 @@ class Server {
             atuh: "/api/auth",
             menuRol: "/api/rolMenu",
             rol: "/api/rol",
-            campus: "api/campus",
-            course: "api/course"
+            campus: "/api/campus",
+            course: "/api/course",
+            campusCourse: '/api/campusCourse'
         };
         this.app = (0, express_1.default)();
         this.port = process.env.PORT || "3000";
@@ -59,6 +61,7 @@ class Server {
         this.app.use(this.apiPaths.rol, rol_routes_1.default);
         this.app.use(this.apiPaths.campus, campus_routes_1.default);
         this.app.use(this.apiPaths.course, course_routes_1.default);
+        this.app.use(this.apiPaths.campusCourse, campusCourse_routes_1.default);
     }
     listen() {
         this.app.listen(this.port, () => {

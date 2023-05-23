@@ -6,16 +6,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Course = void 0;
 const sequelize_1 = require("sequelize");
 const connection_1 = __importDefault(require("../Db/connection"));
-class courses extends sequelize_1.Model {
+const campusCourses_1 = require("./campusCourses");
+class course extends sequelize_1.Model {
 }
 exports.Course = connection_1.default.define("courses", {
-    grade: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    day: {
-        type: sequelize_1.DataTypes.STRING,
-    },
     nomenclature: {
         type: sequelize_1.DataTypes.STRING
     }
 });
+campusCourses_1.campushascourses.belongsTo(exports.Course, { foreignKey: "courseId" });

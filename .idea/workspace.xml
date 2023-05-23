@@ -5,10 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c95d5a62-a797-4b1f-8bdf-7bdeff01c450" name="Changes" comment="union de estudiante a una carrera">
+      <change afterPath="$PROJECT_DIR$/Backend/src/Controllers/campusCourse.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/Models/campusCourses.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/Routes/campusCourse.routes.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/Services/campusCourse.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Controllers/auth.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Controllers/auth.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Controllers/menuRol.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Controllers/menuRol.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Controllers/users.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Controllers/users.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Db/connection.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Db/connection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/build/Models/courses.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Models/courses.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Models/menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Models/menu.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Models/menuRol.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Models/menuRol.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Models/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Models/server.js" afterDir="false" />
@@ -19,6 +25,12 @@
       <change beforePath="$PROJECT_DIR$/Backend/build/Routes/users.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Routes/users.routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Services/MenuRol.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Services/MenuRol.service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Services/User.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Services/User.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/Models/campus.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Models/campus.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/Models/courses.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Models/courses.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/Models/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Models/server.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/ModelDb.mwb" beforeDir="false" afterPath="$PROJECT_DIR$/DB/ModelDb.mwb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/ModelDb.mwb.bak" beforeDir="false" afterPath="$PROJECT_DIR$/DB/ModelDb.mwb.bak" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/app.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,23 +53,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/andresw/Documentos/Restaurants/Frontend/node_modules&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;F:\\Data\\OneDrive\\Documentos\\Restaurants\\Frontend\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/andresw/Documentos/Restaurants/Frontend/node_modules",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "ts.external.directory.path": "F:\\Data\\OneDrive\\Documentos\\Restaurants\\Backend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="npm.Angular CLI Server">
     <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
       <method v="2" />
@@ -101,6 +113,7 @@
       <workItem from="1681679970473" duration="3277000" />
       <workItem from="1683032047591" duration="5000" />
       <workItem from="1684603441795" duration="1444000" />
+      <workItem from="1684795672875" duration="7710000" />
     </task>
     <task id="LOCAL-00001" summary="Union de back login con front login">
       <created>1679600760916</created>

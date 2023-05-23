@@ -1,20 +1,16 @@
-import { DataTypes, Model } from "sequelize";
+import {DataTypes, Model} from "sequelize";
 import db from "../Db/connection";
+import {campushascourses} from "./campusCourses";
 
-class courses extends Model {
-    grade!: string;
-    day!: string;
+
+class course extends Model {
     nomenclature!: string;
 }
 
-export const Course = db.define<courses>("courses", {
-    grade: {
-        type: DataTypes.STRING,
-    },
-    day: {
-        type: DataTypes.STRING,
-    },
+export const Course = db.define<course>("courses", {
     nomenclature: {
         type: DataTypes.STRING
     }
 });
+
+campushascourses.belongsTo(Course, { foreignKey: "courseId" });

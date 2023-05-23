@@ -26,6 +26,8 @@ import {PanelMenuModule} from 'primeng/panelmenu';
 import { FieldsetModule } from 'primeng/fieldset';
 import { DropdownModule } from 'primeng/dropdown';
 import { MessagesModule } from 'primeng/messages';
+import { ListComponent } from './Components/list/list.component';
+import { TableModule } from 'primeng/table';
 
 
 @NgModule({
@@ -34,9 +36,11 @@ import { MessagesModule } from 'primeng/messages';
     LoginComponent,
     NavComponent,
     UserCreateComponent,
+    ListComponent,
   ],
   imports: [
     BrowserModule,
+    TableModule,
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
