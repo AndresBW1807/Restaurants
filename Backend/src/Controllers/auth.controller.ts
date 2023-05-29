@@ -30,6 +30,7 @@ export const login = async (req: Request, res: Response, next: any) => {
     lastNameUser: userVer.lastNameUser,
     user: userVer.user,
     RolId: userVer.RolId,
+    campushascourses_id: userVer.campushascourses_id
   };
 
   //Crear Token payload

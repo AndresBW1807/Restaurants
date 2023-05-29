@@ -9,6 +9,7 @@ export class UserModel {
   public password: string;
   public user: string;
   public RolId: number;
+  public campushascourses_id: number;
   constructor() {
     this.nameUser = "";
     this.lastNameUser = "";
@@ -17,5 +18,6 @@ export class UserModel {
     this.password = "";
     this.user = "";
     this.RolId = 0;
+    this.campushascourses_id = 0;
   }
 }

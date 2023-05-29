@@ -27,5 +27,8 @@ exports.User = connection_1.default.define('users', {
     },
     RolId: {
         type: sequelize_1.DataTypes.NUMBER
+    },
+    campushascourses_id: {
+        type: sequelize_1.DataTypes.NUMBER
     }
 });

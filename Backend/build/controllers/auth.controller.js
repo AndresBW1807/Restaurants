@@ -39,6 +39,7 @@ const login = (req, res, next) => __awaiter(void 0, void 0, void 0, function* ()
         lastNameUser: userVer.lastNameUser,
         user: userVer.user,
         RolId: userVer.RolId,
+        campushascourses_id: userVer.campushascourses_id
     };
     //Crear Token payload
     const token = jsonwebtoken_1.default.sign(payload, "R3ZT4UR4TZ", {

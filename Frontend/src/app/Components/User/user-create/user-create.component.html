@@ -1,5 +1,5 @@
-<p-messages [(value)]="Messages" [enableService]="false" [closable]="true"></p-messages>
 <div class="form">
+  <p-messages [(value)]="Messages" [enableService]="false" [closable]="true"></p-messages>
   <p-fieldset legend="Crear nuevo usuario">
       <form (ngSubmit)="userCreate.valid && onSubmit()" [formGroup]="userCreate" #userSubmit="ngForm">
         <div class="input">
@@ -131,6 +131,22 @@
             <p-message
               severity="error"
               text="Debe seleccionar un rol para el usuario"
+            ></p-message>
+          </div>
+        </div>
+        <div class="inputU">
+          <div class="p-inputgroup">
+          <span class="p-inputgroup-addon">
+            <i class="pi pi-bars"></i>
+          </span>
+            <span class="p-float-label ">
+            <p-dropdown [options]="Course" formControlName="CourseId" placeholder="Seleccione el curso del usuario" optionLabel="name"></p-dropdown>
+          </span>
+          </div>
+          <div class="msgU" *ngIf="userCreate.get('CourseId')?.touched && userCreate.get('CourseId')?.valid == false && sumbit || userCreate.get('CourseId')?.valid == false && userSubmit.submitted && sumbit">
+            <p-message
+              severity="error"
+              text="Debe seleccionar un curso para el usuario"
             ></p-message>
           </div>
         </div>

@@ -1,38 +1,42 @@
-import { DataTypes, Model } from "sequelize";
+import {DataTypes, Model} from "sequelize";
 import db from "../Db/connection";
 
-interface UserAttributes extends Model{
+interface UserAttributes extends Model {
     nameUser: string,
     lastNameUser: string,
     idNumber: number,
     typeId: string,
     user: string,
     password: string,
-    RolId: number
+    RolId: number,
+    campushascourses_id: number
 }
 
 
 export const User = db.define <UserAttributes>('users', {
-    nameUser: {
-        type: DataTypes.STRING
+        nameUser: {
+            type: DataTypes.STRING
+        },
+        lastNameUser: {
+            type: DataTypes.STRING
+        },
+        idNumber: {
+            type: DataTypes.NUMBER
+        },
+        typeId: {
+            type: DataTypes.STRING
+        },
+        user: {
+            type: DataTypes.STRING
+        },
+        password: {
+            type: DataTypes.STRING
+        },
+        RolId: {
+            type: DataTypes.NUMBER
+        },
+        campushascourses_id: {
+            type: DataTypes.NUMBER
+        }
     },
-    lastNameUser: {
-        type: DataTypes.STRING
-    },
-    idNumber: { 
-        type: DataTypes.NUMBER
-    },
-    typeId: {
-        type: DataTypes.STRING
-    },
-    user: {
-        type: DataTypes.STRING
-    },
-    password: {
-        type: DataTypes.STRING
-    },
-    RolId: {
-        type: DataTypes.NUMBER
-    }
-},
 )
