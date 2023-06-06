@@ -22,3 +22,4 @@ exports.campushascourses = connection_1.default.define('campushascourses', {
     }
 });
 courses_1.Course === null || courses_1.Course === void 0 ? void 0 : courses_1.Course.hasMany(exports.campushascourses, { foreignKey: "courseId" });
+exports.campushascourses.belongsTo(courses_1.Course, { foreignKey: "courseId" });

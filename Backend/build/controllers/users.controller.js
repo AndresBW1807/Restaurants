@@ -32,7 +32,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.postUsuario = exports.getUsuarios = void 0;
+exports.getUserbyCampus = exports.postUsuario = exports.getUsuarios = void 0;
 const User_service_1 = require("../Services/User.service");
 const user_1 = require("../Models/user");
 const bcryptjs = __importStar(require("bcryptjs"));
@@ -63,3 +63,14 @@ const postUsuario = (req, res, next) => __awaiter(void 0, void 0, void 0, functi
     }
 });
 exports.postUsuario = postUsuario;
+const getUserbyCampus = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    const campusId = req.params.campusId;
+    try {
+        const users = yield userService.getUsersByCampus(campusId);
+        res.json(users);
+    }
+    catch (error) {
+        next(error);
+    }
+});
+exports.getUserbyCampus = getUserbyCampus;

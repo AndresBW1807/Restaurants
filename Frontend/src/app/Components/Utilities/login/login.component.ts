@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
       .subscribe((r) => {
         this.token = r;
         if (r) {
-          this.router.navigate(['/userCreate']);
+          this.router.navigate(['/checkList']);
           this.error = true;
         }else{
           this.error = false

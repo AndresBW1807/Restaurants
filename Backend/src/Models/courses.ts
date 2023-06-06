@@ -13,4 +13,4 @@ export const Course = db.define<course>("courses", {
     }
 });
 
-campushascourses.belongsTo(Course, { foreignKey: "courseId" });
+

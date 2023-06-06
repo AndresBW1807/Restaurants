@@ -12,13 +12,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserService = void 0;
 const User_Dto_1 = require("../DTOs/User.Dto");
 const user_1 = require("../Models/user");
+const campusCourses_1 = require("../Models/campusCourses");
 class UserService {
     find() {
         return __awaiter(this, void 0, void 0, function* () {
             const users = yield user_1.User.findAll();
-            /*const usersDTOs = users.map(
-              (user) => new UserDTO(user.nameUser, user.lastNameUser, user.user)
-            );*/
             return users;
         });
     }
@@ -27,6 +25,19 @@ class UserService {
             const user = yield user_1.User.findOne(id);
             const userDTO = new User_Dto_1.UserDTO(user.nameUser, user.lastNameUser, user.user);
             return userDTO;
+        });
+    }
+    getUsersByCampus(campusId) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const user = yield user_1.User.findAll({
+                include: [{
+                        model: campusCourses_1.campushascourses,
+                        where: { campusId },
+                        attributes: []
+                    }],
+                attributes: ['nameUser', 'lastNameUser', 'id', 'idNumber']
+            });
+            return user;
         });
     }
 }

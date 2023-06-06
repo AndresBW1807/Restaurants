@@ -43,7 +43,7 @@ export class UserCreateComponent implements OnInit {
       { name: 'Tarjeta de identidad', value: 'T.I' },
     ];
 
-    this.campusCourseService.getAllCourseForCampus(this.userLogged.campushascourses_id).subscribe(r => {
+    this.campusCourseService.getAllCourseForCampus(this.userLogged.campus).subscribe(r => {
       r.map((c: any) => {
         this.Course.push({name: c.course.nomenclature, value: c.id})
       })

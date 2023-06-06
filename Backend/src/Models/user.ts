@@ -1,7 +1,9 @@
 import {DataTypes, Model} from "sequelize";
 import db from "../Db/connection";
+import {campushascourses} from "./campusCourses";
 
 interface UserAttributes extends Model {
+    campushascourse: any;
     nameUser: string,
     lastNameUser: string,
     idNumber: number,
@@ -40,3 +42,5 @@ export const User = db.define <UserAttributes>('users', {
         }
     },
 )
+campushascourses.hasMany(User, { foreignKey: 'campushascourses_id'})
+User.belongsTo(campushascourses, {foreignKey: 'campushascourses_id'})
