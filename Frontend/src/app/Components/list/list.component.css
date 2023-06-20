@@ -1,15 +1,27 @@
 .card {
   width: 100%;
   height: 100vh;
+  overflow: auto;
 }
 
 .utilities {
-  width: 100%;
-  height: 20%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .table {
   padding: 3%;
   width: 100%;
   height: 80%;
+}
+
+button {
+  background: #67B939;
+  border: none;
+  height: 30px;
+}
+
+button:hover {
+  background-color: green !important;
 }

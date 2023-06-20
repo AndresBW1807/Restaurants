@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild, ElementRef} from '@angular/core';
 import {UsersService} from "../../Services/users.service";
 import {AuthService} from "../../Services/auth.service";
 import {checkListModel} from "../../Models/checkList.model";
@@ -10,6 +10,8 @@ import {checkListModel} from "../../Models/checkList.model";
 })
 export class ListComponent implements OnInit{
 
+  value!: any;
+  value2!: any;
   userLogged: any;
   checkList!: checkListModel[];
   assistCheck = true
@@ -26,7 +28,17 @@ export class ListComponent implements OnInit{
     });
   }
 
+  @ViewChild('inputElement') inputElement!: ElementRef;
+  @ViewChild('inputElement2') inputElement2!: ElementRef;
+  handleInputChange() {
+    this.value = this.inputElement.nativeElement.value;
+    this.value2 = this.inputElement2.nativeElement.value;
+  }
+
+
   assistance(checkList: checkListModel) {
     console.log(checkList)
   }
+
+  protected readonly event = event;
 }

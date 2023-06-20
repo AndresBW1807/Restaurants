@@ -1,5 +1,4 @@
 import {campushascourses} from "../Models/campusCourses";
-import {Campus} from "../Models/campus";
 import {Course} from "../Models/courses";
 
 export class CampusCourseService {

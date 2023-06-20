@@ -7,6 +7,8 @@ import rolRoutes from "../Routes/rol.routes";
 import campusRoutes from "../Routes/campus.routes";
 import courseRoutes from "../Routes/course.routes";
 import campusCourseRoutes from "../Routes/campusCourse.routes";
+import contractRoutes from "../Routes/contract.routes";
+import contractServiceRoutes from "../Routes/contracService.routes";
 import cors from "cors"
 
 export class Server {
@@ -19,7 +21,9 @@ export class Server {
         rol: "/api/rol",
         campus: "/api/campus",
         course: "/api/course",
-        campusCourse: '/api/campusCourse'
+        campusCourse: '/api/campusCourse',
+        contract: '/api/contract',
+        contractService: '/api/contractService',
     }
 
     constructor() {
@@ -51,6 +55,8 @@ export class Server {
         this.app.use(this.apiPaths.campus, campusRoutes);
         this.app.use(this.apiPaths.course, courseRoutes);
         this.app.use(this.apiPaths.campusCourse, campusCourseRoutes);
+        this.app.use(this.apiPaths.contract, contractRoutes);
+        this.app.use(this.apiPaths.contractService, contractServiceRoutes);
     }
 
     listen() {

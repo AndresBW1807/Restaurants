@@ -28,6 +28,8 @@ import { DropdownModule } from 'primeng/dropdown';
 import { MessagesModule } from 'primeng/messages';
 import { ListComponent } from './Components/list/list.component';
 import { TableModule } from 'primeng/table';
+import { BreadcrumbModule } from 'primeng/breadcrumb';
+
 
 
 @NgModule({
@@ -55,6 +57,7 @@ import { TableModule } from 'primeng/table';
     FieldsetModule,
     DropdownModule,
     MessagesModule,
+    BreadcrumbModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: () => {
