@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import {Request, Response} from "express";
 import {contractServiceService} from "../Services/contracService.service";
 
 
@@ -10,5 +10,17 @@ export const getServiceContrac = async (req: Request, res: Response, next: any) 
         res.json(contracService);
     } catch (error) {
         next(error);
+    }
+};
+
+export const getServiceContracByTypeService = async (req: Request, res: Response, next: any) => {
+    const contracId = req.params.contracId;
+    const typeServiceId = req.params.typeServiceId;
+    try {
+        const contracService = await contracServiceService.findAllServiceContractTypeService(contracId, typeServiceId);
+        res.json(contracService);
+    } catch (error) {
+        next(error);
+        console.log(error)
     }
 };

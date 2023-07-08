@@ -9,19 +9,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ContractService = void 0;
-const contract_1 = require("../Models/contract");
-class ContractService {
-    findAll(idCampus) {
+exports.CheklistService = void 0;
+const checklist_1 = require("../Models/checklist");
+class CheklistService {
+    postAssistance(Assitance) {
         return __awaiter(this, void 0, void 0, function* () {
-            const contract = contract_1.Contract.findOne({
-                where: {
-                    CampusId: idCampus,
-                    validity: 1
-                }
-            });
-            return contract;
+            const assistance = yield checklist_1.CheckList.create(Assitance);
+            yield assistance.save();
+            return assistance;
         });
     }
 }
-exports.ContractService = ContractService;
+exports.CheklistService = CheklistService;

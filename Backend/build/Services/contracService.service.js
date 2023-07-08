@@ -20,7 +20,22 @@ class contractServiceService {
                 include: [
                     {
                         model: services_1.Service,
-                        attributes: ['typeServiceId']
+                        attributes: ['typeServiceId', 'id', 'data']
+                    }
+                ],
+            });
+            return campusCourse;
+        });
+    }
+    findAllServiceContractTypeService(contractId, typeServiceId) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const campusCourse = contracsServices_1.contracshasservices.findOne({
+                where: { contracId: contractId },
+                include: [
+                    {
+                        model: services_1.Service,
+                        where: { typeServiceId: typeServiceId },
+                        attributes: ['typeServiceId', 'id', 'data']
                     }
                 ],
             });

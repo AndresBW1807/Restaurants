@@ -1,4 +1,4 @@
-import { Server } from './Models/server';
+import  { Server } from './Models/server';
 import dotenv from "dotenv"
 dotenv.config();
 

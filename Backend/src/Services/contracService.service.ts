@@ -9,7 +9,21 @@ export class contractServiceService {
             include: [
                 {
                     model: Service,
-                    attributes: ['typeServiceId']
+                    attributes: ['typeServiceId', 'id', 'data']
+                }
+            ],
+        })
+        return campusCourse
+    }
+
+    async findAllServiceContractTypeService(contractId: string, typeServiceId: string) {
+        const campusCourse = contracshasservices.findOne({
+            where: {contracId: contractId},
+            include: [
+                {
+                    model: Service,
+                    where: {typeServiceId: typeServiceId},
+                    attributes: ['typeServiceId', 'id', 'data']
                 }
             ],
         })

@@ -6,9 +6,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Campus = void 0;
 const sequelize_1 = require("sequelize");
 const connection_1 = __importDefault(require("../Db/connection"));
-class campus extends sequelize_1.Model {
+class campuses extends sequelize_1.Model {
 }
-exports.Campus = connection_1.default.define("campus", {
+exports.Campus = connection_1.default.define("campuses", {
+    id: {
+        type: sequelize_1.DataTypes.NUMBER,
+        primaryKey: true
+    },
     name: {
         type: sequelize_1.DataTypes.STRING,
     },

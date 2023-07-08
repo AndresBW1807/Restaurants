@@ -32,7 +32,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getUserbyCampus = exports.postUsuario = exports.getUsuarios = void 0;
+exports.getUserbyCampus = exports.postUsuario = exports.getUsersWithAttendance = exports.getUsuariosUnassistance = exports.getUsuarios = void 0;
 const User_service_1 = require("../Services/User.service");
 const user_1 = require("../Models/user");
 const bcryptjs = __importStar(require("bcryptjs"));
@@ -47,6 +47,31 @@ const getUsuarios = (req, res, next) => __awaiter(void 0, void 0, void 0, functi
     }
 });
 exports.getUsuarios = getUsuarios;
+const getUsuariosUnassistance = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    const campusId = req.params.campusId;
+    const serviceId = req.params.serviceId;
+    try {
+        const users = yield userService.getUsersAssistanceFalse(campusId, serviceId);
+        res.json(users);
+    }
+    catch (error) {
+        next(error);
+        console.log(error);
+    }
+});
+exports.getUsuariosUnassistance = getUsuariosUnassistance;
+const getUsersWithAttendance = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    const campusId = req.params.campusId;
+    const serviceId = req.params.serviceId;
+    try {
+        const users = yield userService.getUsersWithAttendance(campusId, serviceId);
+        res.json(users);
+    }
+    catch (error) {
+        next(error);
+    }
+});
+exports.getUsersWithAttendance = getUsersWithAttendance;
 const postUsuario = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     const { body } = req;
     try {
@@ -59,7 +84,6 @@ const postUsuario = (req, res, next) => __awaiter(void 0, void 0, void 0, functi
     }
     catch (error) {
         next(error);
-        console.log(error);
     }
 });
 exports.postUsuario = postUsuario;

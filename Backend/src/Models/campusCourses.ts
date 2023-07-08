@@ -1,6 +1,7 @@
 import {DataTypes, Model} from "sequelize";
 import db from "../Db/connection";
 import {Course} from "./courses";
+import {Campus} from "./campus";
 
 
 class campusCourse extends Model {
@@ -24,6 +25,8 @@ export const campushascourses = db.define<campusCourse>('campushascourses', {
 
 Course?.hasMany(campushascourses, { foreignKey: "courseId" });
 campushascourses.belongsTo(Course, { foreignKey: "courseId" });
+Campus?.hasMany(campushascourses, {foreignKey: 'campusId'});
+campushascourses.belongsTo(Campus, { foreignKey: "campusId" });
 
 
 

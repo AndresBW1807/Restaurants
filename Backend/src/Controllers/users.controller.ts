@@ -15,6 +15,29 @@ export const getUsuarios = async (req: Request, res: Response, next: any) => {
     }
 };
 
+export const getUsuariosUnassistance = async (req: Request, res: Response, next: any) => {
+    const campusId = req.params.campusId;
+    const serviceId = req.params.serviceId
+    try {
+        const users = await userService.getUsersAssistanceFalse(campusId, serviceId)
+        res.json(users);
+    } catch (error) {
+        next(error);
+        console.log(error)
+    }
+};
+
+export const getUsersWithAttendance = async (req: Request, res: Response, next: any) => {
+    const campusId = req.params.campusId;
+    const serviceId = req.params.serviceId
+    try {
+        const users = await userService.getUsersWithAttendance(campusId, serviceId)
+        res.json(users);
+    } catch (error) {
+        next(error);
+    }
+};
+
 export const postUsuario = async (req: Request, res: Response, next: any) => {
     const {body} = req;
     try {
@@ -26,7 +49,6 @@ export const postUsuario = async (req: Request, res: Response, next: any) => {
         res.json(user);
     } catch (error) {
         next(error);
-        console.log(error)
     }
 };
 

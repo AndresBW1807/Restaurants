@@ -1,5 +1,6 @@
 import {DataTypes, Model} from "sequelize";
 import db from "../Db/connection";
+import {User} from "./user";
 
 class checklist extends Model {
     id!: number;
@@ -27,3 +28,6 @@ export const CheckList = db.define<checklist>("checklist", {
         type: DataTypes.NUMBER
     }
 });
+
+User.hasMany(CheckList, { foreignKey: 'userId'})
+CheckList.belongsTo(User, {foreignKey: 'userId'})

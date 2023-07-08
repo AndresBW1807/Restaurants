@@ -25,3 +25,24 @@ button {
 button:hover {
   background-color: green !important;
 }
+
+.Information {
+  margin: 2% 2% 0% 2%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.campus, .InfN {
+  width: 47%;
+  border: 1px solid #86bc6c;
+  padding: 2%;
+}
+
+.campus h3, .InfN h3{
+  margin: 0% 0% 2% 0%;
+}
+
+p {
+  margin: 0
+}
+

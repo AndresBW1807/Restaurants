@@ -13,6 +13,8 @@ exports.UserService = void 0;
 const User_Dto_1 = require("../DTOs/User.Dto");
 const user_1 = require("../Models/user");
 const campusCourses_1 = require("../Models/campusCourses");
+const checklist_1 = require("../Models/checklist");
+const sequelize_1 = require("sequelize");
 class UserService {
     find() {
         return __awaiter(this, void 0, void 0, function* () {
@@ -38,6 +40,49 @@ class UserService {
                 attributes: ['nameUser', 'lastNameUser', 'id', 'idNumber']
             });
             return user;
+        });
+    }
+    getUsersAssistanceFalse(campusId, serviceId) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const users = yield user_1.User.findAll({
+                include: [
+                    {
+                        model: checklist_1.CheckList,
+                        required: false,
+                        where: {
+                            serviceId: serviceId,
+                        }
+                    },
+                    {
+                        model: campusCourses_1.campushascourses,
+                        where: { campusId },
+                        attributes: [] // Filtra por el ID del campus específico
+                    }
+                ],
+                where: {
+                    '$checklists.id$': null
+                }
+            });
+            return users;
+        });
+    }
+    getUsersWithAttendance(campusId, serviceId) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const users = yield user_1.User.findAll({
+                include: [
+                    {
+                        model: checklist_1.CheckList,
+                        where: { userId: { [sequelize_1.Op.not]: null }, serviceId: serviceId },
+                        attributes: []
+                    },
+                    {
+                        model: campusCourses_1.campushascourses,
+                        where: { campusId },
+                        attributes: [] // Filtra por el ID del campus específico
+                    }
+                ]
+            });
+            return users;
         });
     }
 }

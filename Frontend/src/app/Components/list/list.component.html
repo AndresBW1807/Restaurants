@@ -1,8 +1,17 @@
 <div class="card">
+  <p-messages [(value)]="Messages" [enableService]="false" [closable]="true"></p-messages>
+  <div class="Information">
+    <div class="campus"><h3>Campus</h3>
+      <p>{{userLogged.campusName}}</p>
+    </div>
+    <div class="InfN"><h3>Informacion nutricional del menu</h3>
+      <p>{{InfNutritional}}</p>
+    </div>
+  </div>
   <div class="table">
     <p-table
       #dt1
-      [value]="checkList"
+      [value]="checkListUnassistance"
       dataKey="id"
       styleClass="p-datatable-sm"
       [rows]="5"
@@ -34,7 +43,9 @@
           <td>{{checkList.nameUser}}</td>
           <td>{{checkList.lastNameUser}}</td>
           <td>{{checkList.idNumber}}</td>
-          <td><button pButton type="submit" label="Asistencia"></button></td>
+          <td>
+            <button pButton type="button" label="Asistencia" (click)="assistance(checkList)"></button>
+          </td>
         </tr>
       </ng-template>
     </p-table>
@@ -48,7 +59,7 @@
       [paginator]="true"
       currentPageReportTemplate="{totalRecords} Estudiantes con asistencia registrada"
       [globalFilterFields]="['nameUser', 'lastNameUser', 'idNumber']"
-      [value]="checkList"
+      [value]="checkListAttendance"
       [tableStyle]="{'min-width': '50rem'}"
       styleClass="p-datatable-md">
       <ng-template pTemplate="caption">

@@ -3,6 +3,7 @@ import { User } from "../Models/user";
 import bcryptjs from "bcryptjs";
 import jwt from "jsonwebtoken";
 import {campushascourses} from "../Models/campusCourses";
+import {Campus} from "../Models/campus";
 
 export const login = async (req: Request, res: Response, next: any) => {
   const { user, password } = req.body;
@@ -15,6 +16,12 @@ export const login = async (req: Request, res: Response, next: any) => {
         {
           model: campushascourses,
           attributes: ['campusId'],
+          include: [
+            {
+              model: Campus,
+              attributes: ['name']
+            }
+          ]
         },
       ],
     });
@@ -36,7 +43,7 @@ export const login = async (req: Request, res: Response, next: any) => {
 
     // Obtener el campus del usuario
     const campus = userVer.campushascourse.campusId
-
+    const campusName = userVer.campushascourse.campus.name
     // Crear el payload con el campus incluido
     const payload = {
       nameUser: userVer.nameUser,
@@ -44,6 +51,7 @@ export const login = async (req: Request, res: Response, next: any) => {
       user: userVer.user,
       RolId: userVer.RolId,
       campus, // Incluimos el campus en el payload
+      campusName
     };
 
     // Crear el token payload

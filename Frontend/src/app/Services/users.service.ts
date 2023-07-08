@@ -28,8 +28,14 @@ export class UsersService {
     }))
   }
 
-  GetUserByCampus(CampusId: Number) {
-    return this.http.get(this.serviceUrl + '/api/users/' + CampusId).pipe(map(res => {
+  GetUserByCampusUnassistence(CampusId: number, serviceId: number) {
+    return this.http.get(this.serviceUrl + '/api/users/unassistance/campusId/' + CampusId + '/service/' + serviceId).pipe(map(res => {
+      return res as checkListModel[]
+    }))
+  }
+
+  GetUserByCampusAttendance(CampusId: number, serviceId: number) {
+    return this.http.get(this.serviceUrl + '/api/users/Attendance/campusId/' + CampusId + '/service/' + serviceId).pipe(map(res => {
       return res as checkListModel[]
     }))
   }
