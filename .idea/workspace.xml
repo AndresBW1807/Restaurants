@@ -5,53 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c95d5a62-a797-4b1f-8bdf-7bdeff01c450" name="Changes" comment="Tabla de checklist con contrato">
+      <change afterPath="$PROJECT_DIR$/DB/Scripts.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Controllers/auth.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Controllers/auth.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/build/Controllers/contracService.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Controllers/contracService.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Controllers/menuRol.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Controllers/menuRol.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Controllers/users.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Controllers/users.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Db/connection.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Db/connection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/build/Models/campus.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Models/campus.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/build/Models/campusCourses.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Models/campusCourses.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/build/Models/checklist.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Models/checklist.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Models/menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Models/menu.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Models/menuRol.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Models/menuRol.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Models/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Models/server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Models/submenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Models/submenu.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Models/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Routes/auth.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Routes/auth.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/build/Routes/campusCourse.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Routes/campusCourse.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/build/Routes/contracService.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Routes/contracService.routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Routes/menuRol.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Routes/menuRol.routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Routes/users.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Routes/users.routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Services/MenuRol.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Services/MenuRol.service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Services/User.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Services/User.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/build/Services/contracService.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Services/contracService.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/build/Services/contract.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Services/contract.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/Controllers/auth.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Controllers/auth.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/Controllers/contracService.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Controllers/contracService.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/Controllers/users.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Controllers/users.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/Models/campus.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Models/campus.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/Models/campusCourses.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Models/campusCourses.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/Models/checklist.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Models/checklist.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/Models/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Models/server.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/Models/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Models/user.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/Routes/campusCourse.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Routes/campusCourse.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/Routes/checkList.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Routes/checkList.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/Routes/contracService.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Routes/contracService.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/Routes/users.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Routes/users.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/Services/User.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Services/User.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/Services/cheklist.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Services/cheklist.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/Services/contracService.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Services/contracService.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/Services/contract.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Services/contract.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/Components/list/list.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/Components/list/list.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/Components/list/list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/Components/list/list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/Components/list/list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/Components/list/list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/Models/assistance.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/Models/assistance.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/Models/contract.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/Models/contract.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/Models/contractService.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/Models/contractService.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/Services/users.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/Services/users.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,7 +131,8 @@
       <workItem from="1688681774666" duration="3667000" />
       <workItem from="1688753637121" duration="1092000" />
       <workItem from="1688777928351" duration="1000" />
-      <workItem from="1688833508992" duration="17098000" />
+      <workItem from="1688833508992" duration="17168000" />
+      <workItem from="1688860850901" duration="1032000" />
     </task>
     <task id="LOCAL-00001" summary="Union de back login con front login">
       <created>1679600760916</created>
