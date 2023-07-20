@@ -50,6 +50,7 @@ export class ListComponent implements OnInit {
             this.serviceId = r.serviceId
             this.cargarTablas()
           })
+          return
         }
         if (currentHour >= 12 && currentHour < 18 && this.serviceList.includes(2)) {
           this.contractService.getServicesByContractAndTypeService(this.contractId, 2).subscribe(r => {
@@ -57,6 +58,7 @@ export class ListComponent implements OnInit {
             this.serviceId = r.serviceId
             this.cargarTablas()
           })
+          return
         }
         if (this.serviceList.includes(3)) {
           this.contractService.getServicesByContractAndTypeService(this.contractId, 3).subscribe(r => {
@@ -64,6 +66,7 @@ export class ListComponent implements OnInit {
             this.serviceId = r.serviceId
             this.cargarTablas()
           })
+          return
         }
 
       })

@@ -44,6 +44,11 @@ class UserService {
     }
     getUsersAssistanceFalse(campusId, serviceId) {
         return __awaiter(this, void 0, void 0, function* () {
+            let day = new Date();
+            const startOfDay = new Date(day);
+            startOfDay.setHours(0, 0, 0, 0);
+            const endOfDay = new Date(day);
+            endOfDay.setHours(23, 59, 59, 999);
             const users = yield user_1.User.findAll({
                 include: [
                     {
@@ -51,6 +56,9 @@ class UserService {
                         required: false,
                         where: {
                             serviceId: serviceId,
+                            createdAt: {
+                                [sequelize_1.Op.between]: [startOfDay, endOfDay],
+                            }
                         }
                     },
                     {
@@ -68,11 +76,22 @@ class UserService {
     }
     getUsersWithAttendance(campusId, serviceId) {
         return __awaiter(this, void 0, void 0, function* () {
+            let day = new Date();
+            const startOfDay = new Date(day);
+            startOfDay.setHours(0, 0, 0, 0);
+            const endOfDay = new Date(day);
+            endOfDay.setHours(23, 59, 59, 999);
             const users = yield user_1.User.findAll({
                 include: [
                     {
                         model: checklist_1.CheckList,
-                        where: { userId: { [sequelize_1.Op.not]: null }, serviceId: serviceId },
+                        where: {
+                            userId: { [sequelize_1.Op.not]: null },
+                            serviceId: serviceId,
+                            createdAt: {
+                                [sequelize_1.Op.between]: [startOfDay, endOfDay],
+                            }
+                        },
                         attributes: []
                     },
                     {
