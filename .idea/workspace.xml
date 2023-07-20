@@ -4,26 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c95d5a62-a797-4b1f-8bdf-7bdeff01c450" name="Changes" comment="Tabla de checklist con contrato">
+    <list default="true" id="c95d5a62-a797-4b1f-8bdf-7bdeff01c450" name="Changes" comment="test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Controllers/auth.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Controllers/auth.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/build/Controllers/menuRol.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Controllers/menuRol.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Controllers/users.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Controllers/users.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/build/DTOs/User.Dto.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/DTOs/User.Dto.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Db/connection.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Db/connection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/build/Models/menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Models/menu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/build/Models/menuRol.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Models/menuRol.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/build/Middleware/validationJWT.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Middleware/validationJWT.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Models/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Models/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/build/Models/submenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Models/submenu.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Models/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/build/Routes/auth.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Routes/auth.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/build/Routes/menuRol.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Routes/menuRol.routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Routes/users.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Routes/users.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/build/Services/MenuRol.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Services/MenuRol.service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Services/User.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Services/User.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/Db/connection.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Db/connection.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/Services/User.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Services/User.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/PaeBackup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DB/PaeBackup.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/Components/list/list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/Components/list/list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/build/Services/campus.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Services/campus.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/build/Services/campusCourse.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Services/campusCourse.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/build/Services/cheklist.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Services/cheklist.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/build/Services/contracService.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Services/contracService.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/build/Services/contract.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Services/contract.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/build/Services/courses.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Services/courses.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/build/Services/menuRol.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Services/menuRol.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/build/Services/rol.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Services/rol.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/build/controllers/menuRol.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/controllers/menuRol.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/build/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/build/models/menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/models/menu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/build/models/menuRol.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/models/menuRol.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/build/models/submenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/models/submenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/build/routes/auth.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/routes/auth.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/build/routes/menuRol.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/routes/menuRol.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/Components/User/user-create/user-create.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/Components/User/user-create/user-create.component.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,23 +68,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/andresw/Documentos/Restaurants/Frontend/node_modules&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;F:\\Data\\OneDrive\\Documentos\\Restaurants\\Backend\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/andresw/Documentos/Restaurants/Frontend/node_modules",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "ts.external.directory.path": "C:\\Users\\flipe\\OneDrive\\Documentos\\Restaurants\\Backend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="npm.Angular CLI Server">
     <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
       <method v="2" />
