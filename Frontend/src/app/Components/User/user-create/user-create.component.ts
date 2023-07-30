@@ -87,7 +87,7 @@ export class UserCreateComponent implements OnInit {
     return this.fb.group({
       nameUser: ['', [Validators.required]],
       lastNameUser: ['', [Validators.required]],
-      idNumber: ['', [Validators.required, Validators.pattern(/^[0-9]{8,}$/)]],
+      idNumber: ['', [Validators.required, Validators.pattern(/^[0-9]{8,12}$/)]],
       typeId: ['', [Validators.required]],
       user: ['',[Validators.required]],
       password: ['',[Validators.required, Validators.pattern(/^(?=.*[A-Z])(?=.*\d).{6,}$/)]],

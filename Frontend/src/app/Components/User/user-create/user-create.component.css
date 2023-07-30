@@ -15,7 +15,8 @@ p-messages {
 p-fieldset {
   width: 70% !important;
   overflow-x: auto !important;
-  max-height: 600px;
+  min-height: 500px;
+  max-height: 900px;
 }
 
 .input {

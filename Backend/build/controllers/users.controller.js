@@ -36,6 +36,7 @@ exports.getUserbyCampus = exports.postUsuario = exports.postUsuariosUnassistance
 const User_service_1 = require("../Services/User.service");
 const user_1 = require("../Models/user");
 const bcryptjs = __importStar(require("bcryptjs"));
+const sequelize_1 = require("sequelize");
 const userService = new User_service_1.UserService();
 const getUsuarios = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -87,15 +88,28 @@ exports.postUsuariosUnassistance = postUsuariosUnassistance;
 const postUsuario = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     const { body } = req;
     try {
-        const user = yield user_1.User.create(body);
-        const saltRounds = 10; // Número de rondas de encriptación
-        const hashedPassword = bcryptjs.hashSync(body.password, saltRounds);
-        user.set('password', hashedPassword); // Guardar la contraseña encriptada en el modelo User
-        yield user.save(); // Guardar el usuario en la base de datos
-        res.json(user);
+        const count = yield user_1.User.count({
+            where: {
+                idNumber: body.idNumber,
+                RolId: { [sequelize_1.Op.eq]: body.RolId }, // Excluir el rol actual
+            },
+        });
+        console.log(count);
+        if (count > 0) {
+            throw new Error('No se pueden tener cédulas iguales con roles diferentes');
+        }
+        else {
+            const user = yield user_1.User.create(body);
+            const saltRounds = 10; // Número de rondas de encriptación
+            const hashedPassword = bcryptjs.hashSync(body.password, saltRounds);
+            user.set('password', hashedPassword); // Guardar la contraseña encriptada en el modelo User
+            yield user.save(); // Guardar el usuario en la base de datos
+            res.json(user);
+        }
     }
     catch (error) {
         next(error);
+        console.log(error);
     }
 });
 exports.postUsuario = postUsuario;

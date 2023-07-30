@@ -55,7 +55,7 @@
           <div class="msg" *ngIf="userCreate.get('idNumber')?.touched && userCreate.get('idNumber')?.valid == false && sumbit || userCreate.get('idNumber')?.valid == false && userSubmit.submitted && sumbit ">
             <p-message
               severity="error"
-              text="El numero de identificaion debe registrarse con solo numeros y deben ser minimo 8 caracteres"
+              text="El numero de identificaion debe registrarse con solo numeros y deben ser minimo 8 caracteres y maximo 12 caracteres"
             ></p-message>
           </div>
         </div>

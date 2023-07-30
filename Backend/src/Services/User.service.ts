@@ -54,11 +54,13 @@ export class UserService {
                 }
             ],
             where: {
-                '$checklists.id$': null
+                '$checklists.id$': null,
+                RolId: 3
             }
         });
         return users;
     }
+
 
     async getUsersWithAttendance(campusId: string, serviceId: string) {
         let day = new Date();
@@ -86,7 +88,10 @@ export class UserService {
                     where: {campusId},
                     attributes: []// Filtra por el ID del campus específico
                 }
-            ]
+            ],
+            where: {
+                RolId: 3
+            }
         });
 
         return users;
@@ -119,7 +124,8 @@ export class UserService {
                 }
             ],
             where: {
-                '$checklists.id$': null
+                '$checklists.id$': null,
+                RolId: 3
             }
         });
 
