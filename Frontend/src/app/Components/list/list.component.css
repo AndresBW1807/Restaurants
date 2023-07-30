@@ -11,7 +11,7 @@
 }
 
 .table {
-  padding: 3%;
+  padding: 0% 3% 0% 3%;
   width: 100%;
   height: 80%;
 }
@@ -45,4 +45,5 @@ button:hover {
 p {
   margin: 0
 }
+
 

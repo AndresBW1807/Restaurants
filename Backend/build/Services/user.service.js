@@ -88,6 +88,7 @@ class UserService {
                         where: {
                             userId: { [sequelize_1.Op.not]: null },
                             serviceId: serviceId,
+                            assistance: true,
                             createdAt: {
                                 [sequelize_1.Op.between]: [startOfDay, endOfDay],
                             }
@@ -102,6 +103,54 @@ class UserService {
                 ]
             });
             return users;
+        });
+    }
+    postUsersAssistanceFalse(campusId, serviceId) {
+        return __awaiter(this, void 0, void 0, function* () {
+            let day = new Date();
+            const startOfDay = new Date(day);
+            startOfDay.setHours(0, 0, 0, 0);
+            const endOfDay = new Date(day);
+            endOfDay.setHours(23, 59, 59, 999);
+            const users = yield user_1.User.findAll({
+                include: [
+                    {
+                        model: checklist_1.CheckList,
+                        required: false,
+                        where: {
+                            serviceId: serviceId,
+                            createdAt: {
+                                [sequelize_1.Op.between]: [startOfDay, endOfDay],
+                            }
+                        }
+                    },
+                    {
+                        model: campusCourses_1.campushascourses,
+                        where: { campusId },
+                        attributes: [] // Filtra por el ID del campus específico
+                    }
+                ],
+                where: {
+                    '$checklists.id$': null
+                }
+            });
+            const usuariosSinAsistencia = users.map(x => x.id);
+            try {
+                // Crea los registros de inasistencia para los usuarios que aún no tienen registro
+                const registrosInasistencia = usuariosSinAsistencia.map((userId) => ({
+                    assistance: false,
+                    date: new Date(),
+                    serviceId: serviceId,
+                    userId: userId,
+                }));
+                // Inserta los registros de inasistencia en la base de datos
+                yield checklist_1.CheckList.bulkCreate(registrosInasistencia);
+                return registrosInasistencia; // Opcionalmente, puedes devolver los registros creados
+            }
+            catch (error) {
+                console.error('Error al registrar inasistencia:', error);
+                throw new Error('Error en el servidor');
+            }
         });
     }
 }

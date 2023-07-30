@@ -4,6 +4,7 @@ import {campushascourses} from "./campusCourses";
 import {CheckList} from "./checklist";
 
 interface UserAttributes extends Model {
+    id: number;
     campushascourse: any;
     nameUser: string,
     lastNameUser: string,

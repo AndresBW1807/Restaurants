@@ -32,7 +32,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getUserbyCampus = exports.postUsuario = exports.getUsersWithAttendance = exports.getUsuariosUnassistance = exports.getUsuarios = void 0;
+exports.getUserbyCampus = exports.postUsuario = exports.postUsuariosUnassistance = exports.getUsersWithAttendance = exports.getUsuariosUnassistance = exports.getUsuarios = void 0;
 const User_service_1 = require("../Services/User.service");
 const user_1 = require("../Models/user");
 const bcryptjs = __importStar(require("bcryptjs"));
@@ -72,6 +72,18 @@ const getUsersWithAttendance = (req, res, next) => __awaiter(void 0, void 0, voi
     }
 });
 exports.getUsersWithAttendance = getUsersWithAttendance;
+const postUsuariosUnassistance = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    const campusId = req.params.campusId;
+    const serviceId = req.params.serviceId;
+    try {
+        const users = yield userService.postUsersAssistanceFalse(campusId, serviceId);
+        res.json(users);
+    }
+    catch (error) {
+        next(error);
+    }
+});
+exports.postUsuariosUnassistance = postUsuariosUnassistance;
 const postUsuario = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     const { body } = req;
     try {

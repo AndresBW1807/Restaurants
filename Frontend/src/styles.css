@@ -48,3 +48,8 @@ body{
   margin: 0;
 }
 
+.p-datatable-header {
+  margin-top: 2% !important;
+}
+
+

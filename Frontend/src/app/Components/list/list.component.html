@@ -13,11 +13,9 @@
       #dt1
       [value]="checkListUnassistance"
       dataKey="id"
+      [scrollable]="true"
+      scrollHeight="230px"
       styleClass="p-datatable-sm"
-      [rows]="5"
-      [showCurrentPageReport]="true"
-      [paginator]="true"
-      currentPageReportTemplate="{totalRecords} Estudiantes sin asistencia registrada"
       [globalFilterFields]="['nameUser', 'lastNameUser', 'idNumber']"
       [tableStyle]="{'min-width': '50rem'}">
       <ng-template pTemplate="caption">
@@ -54,10 +52,8 @@
     <p-table
       #dt2
       dataKey="id"
-      [rows]="5"
-      [showCurrentPageReport]="true"
-      [paginator]="true"
-      currentPageReportTemplate="{totalRecords} Estudiantes con asistencia registrada"
+      [scrollable]="true"
+      scrollHeight="350px"
       [globalFilterFields]="['nameUser', 'lastNameUser', 'idNumber']"
       [value]="checkListAttendance"
       [tableStyle]="{'min-width': '50rem'}"

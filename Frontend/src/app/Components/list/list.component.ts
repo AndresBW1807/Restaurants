@@ -3,9 +3,11 @@ import {UsersService} from "../../Services/users.service";
 import {AuthService} from "../../Services/auth.service";
 import {checkListModel} from "../../Models/checkList.model";
 import {ContractService} from "../../Services/contract.service";
-import {ContractServiceModel} from "../../Models/contractService.model";
 import {AssistanceModel} from "../../Models/assistance.model";
 import {CheckListService} from "../../Services/check-list.service";
+import { interval, Observable, EMPTY } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-list',
@@ -49,6 +51,7 @@ export class ListComponent implements OnInit {
             this.InfNutritional = r.service.data
             this.serviceId = r.serviceId
             this.cargarTablas()
+            this.postUnAssist()
           })
           return
         }
@@ -57,16 +60,21 @@ export class ListComponent implements OnInit {
             this.InfNutritional = r.service.data
             this.serviceId = r.serviceId
             this.cargarTablas()
+            this.postUnAssist()
+            ;
           })
           return
         }
-        if (this.serviceList.includes(3)) {
+        if (currentHour <= 20 && this.serviceList.includes(3)) {
           this.contractService.getServicesByContractAndTypeService(this.contractId, 3).subscribe(r => {
             this.InfNutritional = r.service.data
             this.serviceId = r.serviceId
             this.cargarTablas()
+            this.postUnAssist()
           })
           return
+        } else {
+
         }
 
       })
@@ -82,8 +90,28 @@ export class ListComponent implements OnInit {
     this.value2 = this.inputElement2.nativeElement.value;
   }
 
+  postUnAssist() {
+    const hoursToCall = [11, 17, 19]; // Horas en las que deseas llamar al servicio (11:59 am, 5:59 pm, 7:59 pm)
+
+    interval(1000) // Comprobar cada segundo si es hora de realizar la llamada
+      .pipe(
+        switchMap(() => {
+          const now = new Date();
+          const currentHour = now.getHours();
+          const currentMinute = now.getMinutes();
+
+          // Comprueba si la hora actual y los minutos coinciden con los horarios específicos
+          if (hoursToCall.includes(currentHour) && currentMinute === 59) {
+            return this.checkListService.postUnassistance(this.userLogged.campus, this.serviceId);
+          } else {
+            return EMPTY; // Devuelve un observable vacío cuando no es el momento adecuado para llamar al servicio
+          }
+        })
+      )
+      .subscribe();
+  }
+
   cargarTablas(){
-    console.log(this.serviceId)
     this.userService.GetUserByCampusUnassistence(this.userLogged.campus, this.serviceId).subscribe(r => {
       this.checkListUnassistance = r
     });

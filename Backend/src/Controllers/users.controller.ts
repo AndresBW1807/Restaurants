@@ -29,7 +29,7 @@ export const getUsuariosUnassistance = async (req: Request, res: Response, next:
 
 export const getUsersWithAttendance = async (req: Request, res: Response, next: any) => {
     const campusId = req.params.campusId;
-    const serviceId = req.params.serviceId
+    const serviceId = req.params.serviceId;
     try {
         const users = await userService.getUsersWithAttendance(campusId, serviceId)
         res.json(users);
@@ -37,6 +37,17 @@ export const getUsersWithAttendance = async (req: Request, res: Response, next: 
         next(error);
     }
 };
+
+export const postUsuariosUnassistance = async (req: Request, res: Response, next: any) => {
+    const campusId = req.params.campusId;
+    const serviceId = req.params.serviceId;
+    try {
+        const users = await userService.postUsersAssistanceFalse(campusId, serviceId)
+        res.json(users);
+    } catch (error) {
+        next(error);
+    }
+}
 
 export const postUsuario = async (req: Request, res: Response, next: any) => {
     const {body} = req;

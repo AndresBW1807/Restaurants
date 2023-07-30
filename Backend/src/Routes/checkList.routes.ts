@@ -5,5 +5,5 @@ import {postAssistance} from "../Controllers/checkList.controller";
 
 const router = Router();
 
-router.post("/", postAssistance);
+router.post("/", [validationJwt], postAssistance);
 export default router;
