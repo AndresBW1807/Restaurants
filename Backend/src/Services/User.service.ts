@@ -125,7 +125,7 @@ export class UserService {
             ],
             where: {
                 '$checklists.id$': null,
-                RolId: 3
+                RolId: 3,
             }
         });
 

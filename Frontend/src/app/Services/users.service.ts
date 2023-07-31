@@ -39,4 +39,10 @@ export class UsersService {
       return res as checkListModel[]
     }))
   }
+
+  GetUserByCampus(CampusId: number) {
+    return this.http.get(this.serviceUrl + '/api/users/' + CampusId ).pipe(map(res => {
+      return res as checkListModel[]
+    }))
+  }
 }

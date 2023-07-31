@@ -29,6 +29,9 @@ import { MessagesModule } from 'primeng/messages';
 import { ListComponent } from './Components/list/list.component';
 import { TableModule } from 'primeng/table';
 import { BreadcrumbModule } from 'primeng/breadcrumb';
+import { ListUserComponent } from './Components/list-user/list-user.component';
+import { CheckboxModule } from 'primeng/checkbox';
+
 
 
 
@@ -39,6 +42,7 @@ import { BreadcrumbModule } from 'primeng/breadcrumb';
     NavComponent,
     UserCreateComponent,
     ListComponent,
+    ListUserComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,6 +62,7 @@ import { BreadcrumbModule } from 'primeng/breadcrumb';
     DropdownModule,
     MessagesModule,
     BreadcrumbModule,
+    CheckboxModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: () => {
