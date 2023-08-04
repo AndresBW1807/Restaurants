@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c95d5a62-a797-4b1f-8bdf-7bdeff01c450" name="Changes" comment="Tabla de checklist con contrato">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Controllers/auth.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Controllers/auth.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Controllers/menuRol.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Controllers/menuRol.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Controllers/users.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Controllers/users.controller.js" afterDir="false" />
@@ -20,10 +19,6 @@
       <change beforePath="$PROJECT_DIR$/Backend/build/Routes/users.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Routes/users.routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Services/MenuRol.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Services/MenuRol.service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Services/User.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Services/User.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/Services/User.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Services/User.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/Services/users.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/Services/users.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/app.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +143,7 @@
       <workItem from="1689955403808" duration="4000" />
       <workItem from="1690734403132" duration="11145000" />
       <workItem from="1690769683026" duration="1133000" />
-      <workItem from="1690816601372" duration="5548000" />
+      <workItem from="1690816601372" duration="5697000" />
     </task>
     <task id="LOCAL-00001" summary="Union de back login con front login">
       <created>1679600760916</created>
