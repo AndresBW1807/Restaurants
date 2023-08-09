@@ -32,8 +32,8 @@
         <td>{{users.nameUser}}</td>
         <td>{{users.lastNameUser}}</td>
         <td>{{users.idNumber}}</td>
-        <td><p-checkbox></p-checkbox></td>
-        <td style="text-align: center"><a><i class="pi pi-pencil" style="color: cornflowerblue"></i></a></td>
+        <td><i class="pi" [ngClass]="{'true-icon pi-check-circle': users.activated, 'false-icon pi-times-circle': !users.activated}"></i></td>
+        <td style="text-align: center"><a (click)="onUpdateUser(users)"><i class="pi pi-pencil" style="color: cornflowerblue"></i></a></td>
       </tr>
     </ng-template>
   </p-table>

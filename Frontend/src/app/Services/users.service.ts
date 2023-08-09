@@ -4,6 +4,7 @@ import {map} from 'rxjs';
 import {environment} from 'src/environments/environment';
 import {UserModel} from "../Models/user.model";
 import {checkListModel} from "../Models/checkList.model";
+import { BehaviorSubject } from 'rxjs';
 
 interface RespuestaServicio {
   ok: boolean;
@@ -14,12 +15,31 @@ interface RespuestaServicio {
 })
 export class UsersService {
   private serviceUrl = environment.endpoint;
+  private selectedUser: any;
 
   constructor(private http: HttpClient) {
   }
 
+  setSelectedUser(user: any) {
+    this.selectedUser = user
+  }
+
+  getSelectedUser() {
+    return this.selectedUser
+  }
+
   addUser(user: UserModel) {
     return this.http.post<RespuestaServicio>(this.serviceUrl + '/api/users', user).pipe(map(res => {
+      if (res.ok) {
+        return true
+      } else {
+        return false
+      }
+    }))
+  }
+
+  updateUser(user: UserModel, userId: number) {
+    return this.http.put<RespuestaServicio>(this.serviceUrl + '/api/users/updateUser/' + userId , user).pipe(map(res => {
       if (res.ok) {
         return true
       } else {

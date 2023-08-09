@@ -37,7 +37,6 @@ class UserService {
                         where: { campusId },
                         attributes: []
                     }],
-                attributes: ['nameUser', 'lastNameUser', 'id', 'idNumber']
             });
             return user;
         });
@@ -69,7 +68,8 @@ class UserService {
                 ],
                 where: {
                     '$checklists.id$': null,
-                    RolId: 3
+                    RolId: 3,
+                    activated: true
                 }
             });
             return users;
@@ -103,7 +103,8 @@ class UserService {
                     }
                 ],
                 where: {
-                    RolId: 3
+                    RolId: 3,
+                    activated: true
                 }
             });
             return users;
@@ -136,7 +137,8 @@ class UserService {
                 ],
                 where: {
                     '$checklists.id$': null,
-                    RolId: 3
+                    RolId: 3,
+                    activated: true
                 }
             });
             const usuariosSinAsistencia = users.map(x => x.id);

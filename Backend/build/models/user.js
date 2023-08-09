@@ -31,6 +31,9 @@ exports.User = connection_1.default.define('users', {
     },
     campushascourses_id: {
         type: sequelize_1.DataTypes.NUMBER
+    },
+    activated: {
+        type: sequelize_1.DataTypes.BOOLEAN
     }
 });
 campusCourses_1.campushascourses.hasMany(exports.User, { foreignKey: 'campushascourses_id' });

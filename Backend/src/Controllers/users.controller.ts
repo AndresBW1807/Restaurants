@@ -60,7 +60,6 @@ export const postUsuario = async (req: Request, res: Response, next: any) => {
                 RolId: {[Op.eq]: body.RolId}, // Excluir el rol actual
             },
         });
-        console.log(count)
         if (count > 0) {
             throw new Error('No se pueden tener cédulas iguales con roles diferentes');
         } else {
@@ -76,6 +75,41 @@ export const postUsuario = async (req: Request, res: Response, next: any) => {
         console.log(error)
     }
 };
+
+export const updateUsuario = async (req: Request, res: Response, next: any) => {
+    const { body } = req;
+    const { userId } = req.params; // Obtener el ID del usuario de los parámetros de la solicitud
+
+    try {
+        const existingUser = await User.findByPk(userId); // Buscar el usuario existente por su ID
+
+        if (!existingUser) {
+            throw new Error('Usuario no encontrado');
+        }
+
+        // Actualizar los campos necesarios del usuario
+        existingUser.nameUser = body.nameUser;
+        existingUser.lastNameUser = body.lastNameUser;
+        existingUser.idNumber = body.idNumber;
+        existingUser.typeId = body.typeId;
+        existingUser.user = body.user;
+
+        // Actualizar la contraseña solo si se proporciona
+        if (body.password) {
+            const saltRounds = 10;
+            const hashedPassword = bcryptjs.hashSync(body.password, saltRounds);
+            existingUser.password = hashedPassword;
+        }
+
+        await existingUser.save(); // Guardar los cambios en la base de datos
+        res.json(existingUser);
+    } catch (error) {
+        next(error);
+        console.log(error);
+    }
+};
+
+
 
 export const getUserbyCampus = async (req: Request, res: Response, next: any) => {
     const campusId = req.params.campusId;

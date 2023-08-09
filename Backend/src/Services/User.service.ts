@@ -5,6 +5,8 @@ import {CheckList} from "../Models/checklist";
 import {Op} from "sequelize";
 
 export class UserService {
+
+
     async find() {
         const users = await User.findAll();
         return users;
@@ -23,7 +25,6 @@ export class UserService {
                 where: {campusId},
                 attributes: []
             }],
-            attributes: ['nameUser', 'lastNameUser', 'id', 'idNumber']
         })
         return user
     }
@@ -55,7 +56,8 @@ export class UserService {
             ],
             where: {
                 '$checklists.id$': null,
-                RolId: 3
+                RolId: 3,
+                activated: true
             }
         });
         return users;
@@ -90,7 +92,8 @@ export class UserService {
                 }
             ],
             where: {
-                RolId: 3
+                RolId: 3,
+                activated: true
             }
         });
 
@@ -126,6 +129,7 @@ export class UserService {
             where: {
                 '$checklists.id$': null,
                 RolId: 3,
+                activated: true
             }
         });
 

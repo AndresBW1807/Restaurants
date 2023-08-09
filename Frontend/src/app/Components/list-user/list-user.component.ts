@@ -2,13 +2,15 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {UsersService} from "../../Services/users.service";
 import {checkListModel} from "../../Models/checkList.model";
 import {AuthService} from "../../Services/auth.service";
+import {UserModel} from "../../Models/user.model";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-user',
   templateUrl: './list-user.component.html',
   styleUrls: ['./list-user.component.css']
 })
-export class ListUserComponent implements OnInit{
+export class ListUserComponent implements OnInit {
 
   value!: any;
 
@@ -17,7 +19,8 @@ export class ListUserComponent implements OnInit{
 
   constructor(
     private userService: UsersService,
-    private AuthService: AuthService,) {
+    private AuthService: AuthService,
+    private router: Router) {
     this.userLogged = AuthService.getLoggedUser();
   }
 
@@ -30,6 +33,11 @@ export class ListUserComponent implements OnInit{
 
   handleInputChange() {
     this.value = this.inputElement.nativeElement.value;
+  }
+
+  onUpdateUser(user: UserModel) {
+    this.userService.setSelectedUser(user);
+    this.router.navigate(['/userCreate']);
   }
 
 }

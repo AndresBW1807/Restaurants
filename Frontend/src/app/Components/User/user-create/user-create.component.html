@@ -1,6 +1,6 @@
 <div class="form">
   <p-messages [(value)]="Messages" [enableService]="false" [closable]="true"></p-messages>
-  <p-fieldset legend="Crear nuevo usuario">
+  <p-fieldset legend="{{title}} usuario">
       <form (ngSubmit)="userCreate.valid && onSubmit()" [formGroup]="userCreate" #userSubmit="ngForm">
         <div class="input">
           <div class="p-inputgroup">
@@ -118,13 +118,13 @@
           </div>
         </div>
 
-        <div class="inputU">
+        <div class="inputU" *ngIf="!disable">
           <div class="p-inputgroup">
           <span class="p-inputgroup-addon">
             <i class="pi pi-id-card"></i>
           </span>
             <span class="p-float-label ">
-            <p-dropdown [options]="roles" formControlName="RolId" placeholder="Seleccione el rol del usuario" optionLabel="name"></p-dropdown>
+            <p-dropdown [options]="roles" [disabled] = 'disable' formControlName="RolId" placeholder="Seleccione el rol del usuario" optionLabel="name"></p-dropdown>
           </span>
           </div>
           <div class="msgU" *ngIf="userCreate.get('RolId')?.touched && userCreate.get('RolId')?.valid == false && sumbit || userCreate.get('RolId')?.valid == false && userSubmit.submitted && sumbit">
@@ -134,7 +134,7 @@
             ></p-message>
           </div>
         </div>
-        <div class="inputU">
+        <div class="inputU" *ngIf="!disable">
           <div class="p-inputgroup">
           <span class="p-inputgroup-addon">
             <i class="pi pi-bars"></i>
@@ -150,8 +150,11 @@
             ></p-message>
           </div>
         </div>
-        <div class="butt">
+        <div class="butt" *ngIf="!disable">
           <button pButton type="submit" label="Guardar Usuario"></button>
+        </div>
+        <div class="butt" *ngIf="disable">
+          <button pButton type="button" label="Guardar Usuario" (click)="updateUser()"></button>
         </div>
       </form>
   </p-fieldset>

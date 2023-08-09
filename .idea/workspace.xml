@@ -4,21 +4,45 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c95d5a62-a797-4b1f-8bdf-7bdeff01c450" name="Changes" comment="Tabla de checklist con contrato">
+    <list default="true" id="53540d83-6755-4b6c-9437-3a3e9b92c6a7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Restaurants.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Restaurants.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Controllers/auth.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Controllers/auth.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/build/Controllers/menuRol.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Controllers/menuRol.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Controllers/users.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Controllers/users.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/build/DTOs/User.Dto.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/DTOs/User.Dto.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Db/connection.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Db/connection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/build/Models/menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Models/menu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/build/Models/menuRol.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Models/menuRol.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/build/Middleware/validationJWT.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Middleware/validationJWT.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Models/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Models/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/build/Models/submenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Models/submenu.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Models/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/build/Routes/auth.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Routes/auth.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/build/Routes/menuRol.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Routes/menuRol.routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Routes/users.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Routes/users.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/build/Services/MenuRol.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Services/MenuRol.service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Services/User.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Services/User.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/build/Services/campus.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Services/campus.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/build/Services/campusCourse.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Services/campusCourse.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/build/Services/cheklist.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Services/cheklist.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/build/Services/contracService.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Services/contracService.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/build/Services/contract.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Services/contract.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/build/Services/courses.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Services/courses.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/build/Services/menuRol.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Services/menuRol.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/build/Services/rol.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Services/rol.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/build/controllers/menuRol.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/controllers/menuRol.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/build/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/build/models/menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/models/menu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/build/models/menuRol.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/models/menuRol.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/build/models/submenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/models/submenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/build/routes/auth.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/routes/auth.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/build/routes/menuRol.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/routes/menuRol.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/Controllers/users.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Controllers/users.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/Models/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Models/user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/Routes/users.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Routes/users.routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/Services/User.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Services/User.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/Components/User/user-create/user-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/Components/User/user-create/user-create.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/Components/User/user-create/user-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/Components/User/user-create/user-create.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/Components/list-user/list-user.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/Components/list-user/list-user.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/Components/list-user/list-user.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/Components/list-user/list-user.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/Models/user.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/Models/user.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/Services/users.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/Services/users.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,216 +57,57 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="904786f1-b5d7-4e80-abd4-f1707f1c5b3c" />
-        <option name="url" value="https://github.com/AndresBW1807/Restaurants.git" />
-      </UrlAndAccount>
-    </option>
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2NNb7TK2FZkgE2TjSUrjFpLglj5" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2TkUfTMSgqCBpFtrApkEWezwEA3" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/andresw/Documentos/Restaurants/Frontend/node_modules&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;F:\\Data\\OneDrive\\Documentos\\Restaurants\\Frontend\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "develop",
+    "last_opened_file_path": "G:/W11Data/OneDrive/Documentos/Restaurants/Backend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "G:\\W11Data\\OneDrive\\Documentos\\Restaurants\\Frontend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\Data\OneDrive\Documentos\Restaurants\Frontend\src\app\Components" />
-    </key>
-  </component>
-  <component name="RunManager" selected="npm.Angular CLI Server">
-    <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
-      <method v="2" />
-    </configuration>
-    <configuration name="Angular CLI Server" type="js.build_tools.npm">
+}]]></component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/Frontend/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="start" />
-      </scripts>
+      <command value="start" />
       <node-interpreter value="project" />
-      <package-manager value="F:\Data\OneDrive\Documentos\Restaurants\Frontend\node_modules" />
       <envs />
       <method v="2" />
     </configuration>
-    <list>
-      <item itemvalue="JavaScript Debug.Angular Application" />
-      <item itemvalue="npm.Angular CLI Server" />
-    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c95d5a62-a797-4b1f-8bdf-7bdeff01c450" name="Changes" comment="" />
-      <created>1679507323140</created>
+      <changelist id="53540d83-6755-4b6c-9437-3a3e9b92c6a7" name="Changes" comment="" />
+      <created>1691586675264</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1679507323140</updated>
-      <workItem from="1679507323816" duration="13012000" />
-      <workItem from="1679576294745" duration="21032000" />
-      <workItem from="1679661394382" duration="3893000" />
-      <workItem from="1679667492319" duration="150000" />
-      <workItem from="1679682160893" duration="598000" />
-      <workItem from="1679688551167" duration="929000" />
-      <workItem from="1680212157643" duration="260000" />
-      <workItem from="1680274154317" duration="3815000" />
-      <workItem from="1680290933754" duration="6573000" />
-      <workItem from="1680474667722" duration="4573000" />
-      <workItem from="1680964398539" duration="3488000" />
-      <workItem from="1681660973315" duration="8294000" />
-      <workItem from="1681679970473" duration="3277000" />
-      <workItem from="1683032047591" duration="5000" />
-      <workItem from="1684603441795" duration="1444000" />
-      <workItem from="1684795672875" duration="7847000" />
-      <workItem from="1684852718195" duration="8000" />
-      <workItem from="1685377807895" duration="8412000" />
-      <workItem from="1685969914171" duration="13413000" />
-      <workItem from="1686010149352" duration="41000" />
-      <workItem from="1686054998111" duration="130000" />
-      <workItem from="1687191758901" duration="15898000" />
-      <workItem from="1687264435111" duration="4000" />
-      <workItem from="1688129386588" duration="51000" />
-      <workItem from="1688425187263" duration="6417000" />
-      <workItem from="1688487860284" duration="7000" />
-      <workItem from="1688654962962" duration="11378000" />
-      <workItem from="1688681774666" duration="3667000" />
-      <workItem from="1688753637121" duration="1092000" />
-      <workItem from="1688777928351" duration="1000" />
-      <workItem from="1688833508992" duration="17168000" />
-      <workItem from="1688860850901" duration="1135000" />
-      <workItem from="1689088020796" duration="6000" />
-      <workItem from="1689785980717" duration="1502000" />
-      <workItem from="1689793501774" duration="1185000" />
-      <workItem from="1689894675720" duration="222000" />
-      <workItem from="1689955403808" duration="4000" />
-      <workItem from="1690734403132" duration="11145000" />
-      <workItem from="1690769683026" duration="1133000" />
-      <workItem from="1690816601372" duration="5697000" />
+      <updated>1691586675264</updated>
+      <workItem from="1691586676261" duration="23000" />
+      <workItem from="1691586958073" duration="19000" />
+      <workItem from="1691586984989" duration="9352000" />
     </task>
-    <task id="LOCAL-00001" summary="Union de back login con front login">
-      <created>1679600760916</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1679600760916</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Login terminado con restriccion de rutas">
-      <created>1679608623726</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1679608623726</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Menu navbar con principales rutas">
-      <created>1679695574735</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1679695574735</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Fix">
-      <created>1680479181448</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1680479181448</updated>
-    </task>
-    <task id="LOCAL-00005" summary="check list inicio">
-      <created>1682898304215</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1682898304215</updated>
-    </task>
-    <task id="LOCAL-00006" summary="union de estudiante a una carrera">
-      <created>1684697009549</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1684697009549</updated>
-    </task>
-    <task id="LOCAL-00007" summary="union de estudiante a una carrera">
-      <created>1684818795510</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1684818795510</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Formulario terminado creacion de estudiantes">
-      <created>1685389798310</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1685389798310</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Tabla de checklist">
-      <created>1686055032126</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1686055032126</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Tabla de checklist con contrato">
-      <created>1687225880436</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1687225880436</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Union de back login con front login" />
-    <MESSAGE value="Login terminado con restriccion de rutas" />
-    <MESSAGE value="Menu navbar con principales rutas" />
-    <MESSAGE value="Fix" />
-    <MESSAGE value="check list inicio" />
-    <MESSAGE value="union de estudiante a una carrera" />
-    <MESSAGE value="Creacion de carrera a estudiante" />
-    <MESSAGE value="Formulario terminado creacion de estudiantes" />
-    <MESSAGE value="Tabla de checklist" />
-    <MESSAGE value="Tabla de checklist con contrato" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tabla de checklist con contrato" />
   </component>
 </project>

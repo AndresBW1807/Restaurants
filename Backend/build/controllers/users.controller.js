@@ -32,7 +32,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getUserbyCampus = exports.postUsuario = exports.postUsuariosUnassistance = exports.getUsersWithAttendance = exports.getUsuariosUnassistance = exports.getUsuarios = void 0;
+exports.getUserbyCampus = exports.updateUsuario = exports.postUsuario = exports.postUsuariosUnassistance = exports.getUsersWithAttendance = exports.getUsuariosUnassistance = exports.getUsuarios = void 0;
 const User_service_1 = require("../Services/User.service");
 const user_1 = require("../Models/user");
 const bcryptjs = __importStar(require("bcryptjs"));
@@ -94,7 +94,6 @@ const postUsuario = (req, res, next) => __awaiter(void 0, void 0, void 0, functi
                 RolId: { [sequelize_1.Op.eq]: body.RolId }, // Excluir el rol actual
             },
         });
-        console.log(count);
         if (count > 0) {
             throw new Error('No se pueden tener cédulas iguales con roles diferentes');
         }
@@ -113,6 +112,35 @@ const postUsuario = (req, res, next) => __awaiter(void 0, void 0, void 0, functi
     }
 });
 exports.postUsuario = postUsuario;
+const updateUsuario = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    const { body } = req;
+    const { userId } = req.params; // Obtener el ID del usuario de los parámetros de la solicitud
+    try {
+        const existingUser = yield user_1.User.findByPk(userId); // Buscar el usuario existente por su ID
+        if (!existingUser) {
+            throw new Error('Usuario no encontrado');
+        }
+        // Actualizar los campos necesarios del usuario
+        existingUser.nameUser = body.nameUser;
+        existingUser.lastNameUser = body.lastNameUser;
+        existingUser.idNumber = body.idNumber;
+        existingUser.typeId = body.typeId;
+        existingUser.user = body.user;
+        // Actualizar la contraseña solo si se proporciona
+        if (body.password) {
+            const saltRounds = 10;
+            const hashedPassword = bcryptjs.hashSync(body.password, saltRounds);
+            existingUser.password = hashedPassword;
+        }
+        yield existingUser.save(); // Guardar los cambios en la base de datos
+        res.json(existingUser);
+    }
+    catch (error) {
+        next(error);
+        console.log(error);
+    }
+});
+exports.updateUsuario = updateUsuario;
 const getUserbyCampus = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     const campusId = req.params.campusId;
     try {

@@ -13,7 +13,8 @@ interface UserAttributes extends Model {
     user: string,
     password: string,
     RolId: number,
-    campushascourses_id: number
+    campushascourses_id: number,
+    activated: boolean;
 }
 
 
@@ -41,9 +42,12 @@ export const User = db.define <UserAttributes>('users', {
         },
         campushascourses_id: {
             type: DataTypes.NUMBER
+        },
+        activated: {
+            type: DataTypes.BOOLEAN
         }
     },
 )
-campushascourses.hasMany(User, { foreignKey: 'campushascourses_id'})
+campushascourses.hasMany(User, {foreignKey: 'campushascourses_id'})
 User.belongsTo(campushascourses, {foreignKey: 'campushascourses_id'})
 
