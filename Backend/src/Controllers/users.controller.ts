@@ -93,6 +93,7 @@ export const updateUsuario = async (req: Request, res: Response, next: any) => {
         existingUser.idNumber = body.idNumber;
         existingUser.typeId = body.typeId;
         existingUser.user = body.user;
+        existingUser.activated = body.activated;
 
         // Actualizar la contraseña solo si se proporciona
         if (body.password) {

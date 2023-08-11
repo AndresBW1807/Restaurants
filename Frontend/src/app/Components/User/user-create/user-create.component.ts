@@ -71,7 +71,6 @@ export class UserCreateComponent implements OnInit {
   updateUser() {
     this.user = this.userCreate.value
     this.user.campushascourses_id = this.selectUser.campushascourses_id;
-    this.user.activated = true;
     if(this.user.password === null){
       this.user.password = '';
     }
@@ -142,6 +141,7 @@ export class UserCreateComponent implements OnInit {
       password: ['', [Validators.required, Validators.pattern(/^(?=.*[A-Z])(?=.*\d).{6,}$/)]],
       RolId: ['', [Validators.required]],
       CourseId: ['', [Validators.required]],
+      activated: ['']
     });
   }
 }

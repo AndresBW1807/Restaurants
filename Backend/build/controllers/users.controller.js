@@ -126,6 +126,7 @@ const updateUsuario = (req, res, next) => __awaiter(void 0, void 0, void 0, func
         existingUser.idNumber = body.idNumber;
         existingUser.typeId = body.typeId;
         existingUser.user = body.user;
+        existingUser.activated = body.activated;
         // Actualizar la contraseña solo si se proporciona
         if (body.password) {
             const saltRounds = 10;

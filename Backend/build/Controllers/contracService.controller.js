@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getServiceContracByTypeService = exports.getServiceContrac = void 0;
+exports.getServicesInfo = exports.getServiceContracByTypeService = exports.getServiceContrac = void 0;
 const contracService_service_1 = require("../Services/contracService.service");
 const contracServiceService = new contracService_service_1.contractServiceService();
 const getServiceContrac = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
@@ -36,3 +36,15 @@ const getServiceContracByTypeService = (req, res, next) => __awaiter(void 0, voi
     }
 });
 exports.getServiceContracByTypeService = getServiceContracByTypeService;
+const getServicesInfo = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    const contracId = req.params.contracId;
+    try {
+        const contracService = yield contracServiceService.findAllServiceContracType(contracId);
+        res.json(contracService);
+    }
+    catch (error) {
+        console.log(error);
+        next(error);
+    }
+});
+exports.getServicesInfo = getServicesInfo;

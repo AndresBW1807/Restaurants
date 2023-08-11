@@ -1,7 +1,11 @@
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
 }) : (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     o[k2] = m[k];
@@ -28,10 +32,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.postUsuario = exports.getUsuarios = void 0;
+exports.getUserbyCampus = exports.updateUsuario = exports.postUsuario = exports.postUsuariosUnassistance = exports.getUsersWithAttendance = exports.getUsuariosUnassistance = exports.getUsuarios = void 0;
 const User_service_1 = require("../Services/User.service");
 const user_1 = require("../Models/user");
 const bcryptjs = __importStar(require("bcryptjs"));
+const sequelize_1 = require("sequelize");
 const userService = new User_service_1.UserService();
 const getUsuarios = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -43,18 +48,108 @@ const getUsuarios = (req, res, next) => __awaiter(void 0, void 0, void 0, functi
     }
 });
 exports.getUsuarios = getUsuarios;
-const postUsuario = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
-    const { body } = req;
+const getUsuariosUnassistance = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    const campusId = req.params.campusId;
+    const serviceId = req.params.serviceId;
     try {
-        const user = yield user_1.User.create(body);
-        const saltRounds = 10; // Número de rondas de encriptación
-        const hashedPassword = bcryptjs.hashSync(body.password, saltRounds);
-        user.set('password', hashedPassword); // Guardar la contraseña encriptada en el modelo User
-        yield user.save(); // Guardar el usuario en la base de datos
-        res.json(user);
+        const users = yield userService.getUsersAssistanceFalse(campusId, serviceId);
+        res.json(users);
+    }
+    catch (error) {
+        next(error);
+        console.log(error);
+    }
+});
+exports.getUsuariosUnassistance = getUsuariosUnassistance;
+const getUsersWithAttendance = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    const campusId = req.params.campusId;
+    const serviceId = req.params.serviceId;
+    try {
+        const users = yield userService.getUsersWithAttendance(campusId, serviceId);
+        res.json(users);
     }
     catch (error) {
         next(error);
     }
 });
+exports.getUsersWithAttendance = getUsersWithAttendance;
+const postUsuariosUnassistance = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    const campusId = req.params.campusId;
+    const serviceId = req.params.serviceId;
+    try {
+        const users = yield userService.postUsersAssistanceFalse(campusId, serviceId);
+        res.json(users);
+    }
+    catch (error) {
+        next(error);
+    }
+});
+exports.postUsuariosUnassistance = postUsuariosUnassistance;
+const postUsuario = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    const { body } = req;
+    try {
+        const count = yield user_1.User.count({
+            where: {
+                idNumber: body.idNumber,
+                RolId: { [sequelize_1.Op.eq]: body.RolId }, // Excluir el rol actual
+            },
+        });
+        if (count > 0) {
+            throw new Error('No se pueden tener cédulas iguales con roles diferentes');
+        }
+        else {
+            const user = yield user_1.User.create(body);
+            const saltRounds = 10; // Número de rondas de encriptación
+            const hashedPassword = bcryptjs.hashSync(body.password, saltRounds);
+            user.set('password', hashedPassword); // Guardar la contraseña encriptada en el modelo User
+            yield user.save(); // Guardar el usuario en la base de datos
+            res.json(user);
+        }
+    }
+    catch (error) {
+        next(error);
+        console.log(error);
+    }
+});
 exports.postUsuario = postUsuario;
+const updateUsuario = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    const { body } = req;
+    const { userId } = req.params; // Obtener el ID del usuario de los parámetros de la solicitud
+    try {
+        const existingUser = yield user_1.User.findByPk(userId); // Buscar el usuario existente por su ID
+        if (!existingUser) {
+            throw new Error('Usuario no encontrado');
+        }
+        // Actualizar los campos necesarios del usuario
+        existingUser.nameUser = body.nameUser;
+        existingUser.lastNameUser = body.lastNameUser;
+        existingUser.idNumber = body.idNumber;
+        existingUser.typeId = body.typeId;
+        existingUser.user = body.user;
+        existingUser.activated = body.activated;
+        // Actualizar la contraseña solo si se proporciona
+        if (body.password) {
+            const saltRounds = 10;
+            const hashedPassword = bcryptjs.hashSync(body.password, saltRounds);
+            existingUser.password = hashedPassword;
+        }
+        yield existingUser.save(); // Guardar los cambios en la base de datos
+        res.json(existingUser);
+    }
+    catch (error) {
+        next(error);
+        console.log(error);
+    }
+});
+exports.updateUsuario = updateUsuario;
+const getUserbyCampus = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    const campusId = req.params.campusId;
+    try {
+        const users = yield userService.getUsersByCampus(campusId);
+        res.json(users);
+    }
+    catch (error) {
+        next(error);
+    }
+});
+exports.getUserbyCampus = getUserbyCampus;

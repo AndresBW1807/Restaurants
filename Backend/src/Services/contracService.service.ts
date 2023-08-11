@@ -1,5 +1,6 @@
 import {contracshasservices} from "../Models/contracsServices";
 import {Service} from "../Models/services";
+import {TypeService} from "../Models/typeService";
 
 
 export class contractServiceService {
@@ -24,6 +25,26 @@ export class contractServiceService {
                     model: Service,
                     where: {typeServiceId: typeServiceId},
                     attributes: ['typeServiceId', 'id', 'data']
+                }
+            ],
+        })
+        return campusCourse
+    }
+
+    async findAllServiceContracType(contractId: string) {
+        const campusCourse = contracshasservices.findAll({
+            where: {contracId: contractId},
+            attributes:[],
+            include: [
+                {
+                    model: Service,
+                    attributes: ['typeServiceId', 'id', 'data'],
+                    include: [
+                        {
+                            model: TypeService,
+                            attributes: ['Type']
+                        }
+                    ]
                 }
             ],
         })

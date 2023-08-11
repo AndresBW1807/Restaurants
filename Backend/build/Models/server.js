@@ -19,6 +19,13 @@ const users_routes_1 = __importDefault(require("../Routes/users.routes"));
 const auth_routes_1 = __importDefault(require("../Routes/auth.routes"));
 const menuRol_routes_1 = __importDefault(require("../Routes/menuRol.routes"));
 const rol_routes_1 = __importDefault(require("../Routes/rol.routes"));
+const campus_routes_1 = __importDefault(require("../Routes/campus.routes"));
+const course_routes_1 = __importDefault(require("../Routes/course.routes"));
+const campusCourse_routes_1 = __importDefault(require("../Routes/campusCourse.routes"));
+const contract_routes_1 = __importDefault(require("../Routes/contract.routes"));
+const contracService_routes_1 = __importDefault(require("../Routes/contracService.routes"));
+const checkList_routes_1 = __importDefault(require("../Routes/checkList.routes"));
+const service_routes_1 = __importDefault(require("../Routes/service.routes"));
 const cors_1 = __importDefault(require("cors"));
 class Server {
     constructor() {
@@ -26,7 +33,14 @@ class Server {
             users: '/api/users',
             atuh: "/api/auth",
             menuRol: "/api/rolMenu",
-            rol: "/api/rol"
+            rol: "/api/rol",
+            campus: "/api/campus",
+            course: "/api/course",
+            campusCourse: '/api/campusCourse',
+            contract: '/api/contract',
+            contractService: '/api/contractService',
+            checkList: '/api/checkList',
+            services: '/api/services'
         };
         this.app = (0, express_1.default)();
         this.port = process.env.PORT || "3000";
@@ -53,9 +67,18 @@ class Server {
         this.app.use(this.apiPaths.atuh, auth_routes_1.default);
         this.app.use(this.apiPaths.menuRol, menuRol_routes_1.default);
         this.app.use(this.apiPaths.rol, rol_routes_1.default);
+        this.app.use(this.apiPaths.campus, campus_routes_1.default);
+        this.app.use(this.apiPaths.course, course_routes_1.default);
+        this.app.use(this.apiPaths.campusCourse, campusCourse_routes_1.default);
+        this.app.use(this.apiPaths.contract, contract_routes_1.default);
+        this.app.use(this.apiPaths.contractService, contracService_routes_1.default);
+        this.app.use(this.apiPaths.checkList, checkList_routes_1.default);
+        this.app.use(this.apiPaths.services, service_routes_1.default);
     }
     listen() {
-        this.app.listen(this.port, () => { });
+        this.app.listen(this.port, () => {
+            console.log('hola');
+        });
     }
 }
 exports.Server = Server;

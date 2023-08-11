@@ -1,8 +1,8 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {UsersService} from "../../Services/users.service";
-import {checkListModel} from "../../Models/checkList.model";
-import {AuthService} from "../../Services/auth.service";
-import {UserModel} from "../../Models/user.model";
+import {UsersService} from "../../../Services/users.service";
+import {checkListModel} from "../../../Models/checkList.model";
+import {AuthService} from "../../../Services/auth.service";
+import {UserModel} from "../../../Models/user.model";
 import { Router } from '@angular/router';
 
 @Component({

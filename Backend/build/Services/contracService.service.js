@@ -12,6 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.contractServiceService = void 0;
 const contracsServices_1 = require("../Models/contracsServices");
 const services_1 = require("../Models/services");
+const typeService_1 = require("../Models/typeService");
 class contractServiceService {
     findAllServiceContrac(contractId) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -36,6 +37,27 @@ class contractServiceService {
                         model: services_1.Service,
                         where: { typeServiceId: typeServiceId },
                         attributes: ['typeServiceId', 'id', 'data']
+                    }
+                ],
+            });
+            return campusCourse;
+        });
+    }
+    findAllServiceContracType(contractId) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const campusCourse = contracsServices_1.contracshasservices.findAll({
+                where: { contracId: contractId },
+                attributes: [],
+                include: [
+                    {
+                        model: services_1.Service,
+                        attributes: ['typeServiceId', 'id', 'data'],
+                        include: [
+                            {
+                                model: typeService_1.TypeService,
+                                attributes: ['Type']
+                            }
+                        ]
                     }
                 ],
             });

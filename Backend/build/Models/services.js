@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Service = void 0;
 const sequelize_1 = require("sequelize");
 const connection_1 = __importDefault(require("../Db/connection"));
+const typeService_1 = require("./typeService");
 class service extends sequelize_1.Model {
 }
 exports.Service = connection_1.default.define("services", {
@@ -26,3 +27,5 @@ exports.Service = connection_1.default.define("services", {
         type: sequelize_1.DataTypes.NUMBER,
     }
 });
+typeService_1.TypeService.hasMany(exports.Service, { foreignKey: 'typeServiceId' });
+exports.Service.belongsTo(typeService_1.TypeService, { foreignKey: 'typeServiceId' });

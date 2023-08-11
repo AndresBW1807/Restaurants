@@ -25,6 +25,7 @@ const campusCourse_routes_1 = __importDefault(require("../Routes/campusCourse.ro
 const contract_routes_1 = __importDefault(require("../Routes/contract.routes"));
 const contracService_routes_1 = __importDefault(require("../Routes/contracService.routes"));
 const checkList_routes_1 = __importDefault(require("../Routes/checkList.routes"));
+const service_routes_1 = __importDefault(require("../Routes/service.routes"));
 const cors_1 = __importDefault(require("cors"));
 class Server {
     constructor() {
@@ -38,7 +39,8 @@ class Server {
             campusCourse: '/api/campusCourse',
             contract: '/api/contract',
             contractService: '/api/contractService',
-            checkList: '/api/checkList'
+            checkList: '/api/checkList',
+            services: '/api/services'
         };
         this.app = (0, express_1.default)();
         this.port = process.env.PORT || "3000";
@@ -71,6 +73,7 @@ class Server {
         this.app.use(this.apiPaths.contract, contract_routes_1.default);
         this.app.use(this.apiPaths.contractService, contracService_routes_1.default);
         this.app.use(this.apiPaths.checkList, checkList_routes_1.default);
+        this.app.use(this.apiPaths.services, service_routes_1.default);
     }
     listen() {
         this.app.listen(this.port, () => {

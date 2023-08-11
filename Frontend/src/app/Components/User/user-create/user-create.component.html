@@ -1,28 +1,29 @@
 <div class="form">
   <p-messages [(value)]="Messages" [enableService]="false" [closable]="true"></p-messages>
   <p-fieldset legend="{{title}} usuario">
-      <form (ngSubmit)="userCreate.valid && onSubmit()" [formGroup]="userCreate" #userSubmit="ngForm">
-        <div class="input">
-          <div class="p-inputgroup">
+    <form (ngSubmit)="userCreate.valid && onSubmit()" [formGroup]="userCreate" #userSubmit="ngForm">
+      <div class="input">
+        <div class="p-inputgroup">
           <span class="p-inputgroup-addon">
             <i class="pi pi-user"></i>
           </span>
-            <span class="p-float-label">
+          <span class="p-float-label">
             <input type="text" id="Name" formControlName="nameUser" pInputText/>
             <label for="Name">Nombres</label>
           </span>
-          </div>
-          <div class="msg" *ngIf="userCreate.get('nameUser')?.touched && userCreate.get('nameUser')?.valid == false && sumbit || userCreate.get('nameUser')?.valid == false && userSubmit.submitted && sumbit ">
-            <p-message severity="error" text="El campo nombres no puede estar vacio"></p-message>
-          </div>
         </div>
+        <div class="msg"
+             *ngIf="userCreate.get('nameUser')?.touched && userCreate.get('nameUser')?.valid == false && sumbit || userCreate.get('nameUser')?.valid == false && userSubmit.submitted && sumbit ">
+          <p-message severity="error" text="El campo nombres no puede estar vacio"></p-message>
+        </div>
+      </div>
 
-        <div class="input">
-          <div class="p-inputgroup">
+      <div class="input">
+        <div class="p-inputgroup">
           <span class="p-inputgroup-addon">
             <i class="pi pi-user"></i>
           </span>
-            <span class="p-float-label">
+          <span class="p-float-label">
             <input
               type="text"
               id="LastName"
@@ -31,18 +32,19 @@
             />
             <label for="LastName">Apellidos</label>
           </span>
-          </div>
-          <div class="msg" *ngIf="userCreate.get('lastNameUser')?.touched && userCreate.get('lastNameUser')?.valid == false && sumbit  || userCreate.get('lastNameUser')?.valid == false && userSubmit.submitted && sumbit ">
-            <p-message severity="error" text="El campo apellidos no puede estar vacio"></p-message>
-          </div>
         </div>
+        <div class="msg"
+             *ngIf="userCreate.get('lastNameUser')?.touched && userCreate.get('lastNameUser')?.valid == false && sumbit  || userCreate.get('lastNameUser')?.valid == false && userSubmit.submitted && sumbit ">
+          <p-message severity="error" text="El campo apellidos no puede estar vacio"></p-message>
+        </div>
+      </div>
 
-        <div class="input">
-          <div class="p-inputgroup">
+      <div class="input">
+        <div class="p-inputgroup">
           <span class="p-inputgroup-addon">
             <i class="pi pi-id-card"></i>
           </span>
-            <span class="p-float-label">
+          <span class="p-float-label">
             <input
               type="number"
               id="IdNumber"
@@ -51,56 +53,60 @@
             />
             <label for="IdNumber">Numero de Identificación</label>
           </span>
-          </div>
-          <div class="msg" *ngIf="userCreate.get('idNumber')?.touched && userCreate.get('idNumber')?.valid == false && sumbit || userCreate.get('idNumber')?.valid == false && userSubmit.submitted && sumbit ">
-            <p-message
-              severity="error"
-              text="El numero de identificaion debe registrarse con solo numeros y deben ser minimo 8 caracteres y maximo 12 caracteres"
-            ></p-message>
-          </div>
         </div>
+        <div class="msg"
+             *ngIf="userCreate.get('idNumber')?.touched && userCreate.get('idNumber')?.valid == false && sumbit || userCreate.get('idNumber')?.valid == false && userSubmit.submitted && sumbit ">
+          <p-message
+            severity="error"
+            text="El numero de identificaion debe registrarse con solo numeros y deben ser minimo 8 caracteres y maximo 12 caracteres"
+          ></p-message>
+        </div>
+      </div>
 
-        <div class="input">
-          <div class="p-inputgroup">
+      <div class="input">
+        <div class="p-inputgroup">
           <span class="p-inputgroup-addon">
             <i class="pi pi-id-card"></i>
           </span>
-            <span class="p-float-label">
-            <p-dropdown [options]="document" placeholder="Seleccione un tipo de documento" formControlName="typeId" optionLabel="name"></p-dropdown>
+          <span class="p-float-label">
+            <p-dropdown [options]="document" placeholder="Seleccione un tipo de documento" formControlName="typeId"
+                        optionLabel="name"></p-dropdown>
           </span>
-          </div>
-          <div class="msg" *ngIf="userCreate.get('typeId')?.touched && userCreate.get('typeId')?.valid == false && sumbit || userCreate.get('typeId')?.valid == false && userSubmit.submitted && sumbit ">
-            <p-message
-              severity="error"
-              text="Debe seleccionar el tipo de documento"
-            ></p-message>
-          </div>
         </div>
+        <div class="msg"
+             *ngIf="userCreate.get('typeId')?.touched && userCreate.get('typeId')?.valid == false && sumbit || userCreate.get('typeId')?.valid == false && userSubmit.submitted && sumbit ">
+          <p-message
+            severity="error"
+            text="Debe seleccionar el tipo de documento"
+          ></p-message>
+        </div>
+      </div>
 
-        <div class="input">
-          <div class="p-inputgroup">
+      <div class="input">
+        <div class="p-inputgroup">
           <span class="p-inputgroup-addon">
             <i class="pi pi-users"></i>
           </span>
-            <span class="p-float-label">
+          <span class="p-float-label">
             <input type="text" id="User" formControlName="user" pInputText/>
             <label for="User">Usuario</label>
           </span>
-          </div>
-          <div class="msg" *ngIf="userCreate.get('user')?.touched && userCreate.get('user')?.valid == false && sumbit || userCreate.get('user')?.valid == false && userSubmit.submitted && sumbit ">
-            <p-message
-              severity="error"
-              text="El usuario es requerido"
-            ></p-message>
-          </div>
         </div>
+        <div class="msg"
+             *ngIf="userCreate.get('user')?.touched && userCreate.get('user')?.valid == false && sumbit || userCreate.get('user')?.valid == false && userSubmit.submitted && sumbit ">
+          <p-message
+            severity="error"
+            text="El usuario es requerido"
+          ></p-message>
+        </div>
+      </div>
 
-        <div class="input">
-          <div class="p-inputgroup">
+      <div class="input">
+        <div class="p-inputgroup">
           <span class="p-inputgroup-addon">
             <i class="pi pi-lock"></i>
           </span>
-            <span class="p-float-label">
+          <span class="p-float-label">
             <input
               type="password"
               id="Password"
@@ -109,53 +115,63 @@
             />
             <label for="Password">Contraseña</label>
           </span>
-          </div>
-          <div class="msg" *ngIf="userCreate.get('password')?.touched && userCreate.get('password')?.valid == false && sumbit || userCreate.get('password')?.valid == false && userSubmit.submitted && sumbit ">
-            <p-message
-              severity="error"
-              text="La contraseña debe contener minimo 8 caracteres una, letra mayuscula y un numero"
-            ></p-message>
-          </div>
         </div>
+        <div class="msg"
+             *ngIf="userCreate.get('password')?.touched && userCreate.get('password')?.valid == false && sumbit || userCreate.get('password')?.valid == false && userSubmit.submitted && sumbit ">
+          <p-message
+            severity="error"
+            text="La contraseña debe contener minimo 8 caracteres una, letra mayuscula y un numero"
+          ></p-message>
+        </div>
+      </div>
 
-        <div class="inputU" *ngIf="!disable">
-          <div class="p-inputgroup">
+      <div class="inputU" *ngIf="!disable">
+        <div class="p-inputgroup">
           <span class="p-inputgroup-addon">
             <i class="pi pi-id-card"></i>
           </span>
-            <span class="p-float-label ">
-            <p-dropdown [options]="roles" [disabled] = 'disable' formControlName="RolId" placeholder="Seleccione el rol del usuario" optionLabel="name"></p-dropdown>
+          <span class="p-float-label ">
+            <p-dropdown [options]="roles" [disabled]='disable' formControlName="RolId"
+                        placeholder="Seleccione el rol del usuario" optionLabel="name"></p-dropdown>
           </span>
-          </div>
-          <div class="msgU" *ngIf="userCreate.get('RolId')?.touched && userCreate.get('RolId')?.valid == false && sumbit || userCreate.get('RolId')?.valid == false && userSubmit.submitted && sumbit">
-            <p-message
-              severity="error"
-              text="Debe seleccionar un rol para el usuario"
-            ></p-message>
-          </div>
         </div>
-        <div class="inputU" *ngIf="!disable">
-          <div class="p-inputgroup">
+        <div class="msgU"
+             *ngIf="userCreate.get('RolId')?.touched && userCreate.get('RolId')?.valid == false && sumbit || userCreate.get('RolId')?.valid == false && userSubmit.submitted && sumbit">
+          <p-message
+            severity="error"
+            text="Debe seleccionar un rol para el usuario"
+          ></p-message>
+        </div>
+      </div>
+      <div class="inputU" *ngIf="!disable">
+        <div class="p-inputgroup">
           <span class="p-inputgroup-addon">
             <i class="pi pi-bars"></i>
           </span>
-            <span class="p-float-label ">
-            <p-dropdown [options]="Course" formControlName="CourseId" placeholder="Seleccione el curso del usuario" optionLabel="name"></p-dropdown>
+          <span class="p-float-label ">
+            <p-dropdown [options]="Course" formControlName="CourseId" placeholder="Seleccione el curso del usuario"
+                        optionLabel="name"></p-dropdown>
           </span>
-          </div>
-          <div class="msgU" *ngIf="userCreate.get('CourseId')?.touched && userCreate.get('CourseId')?.valid == false && sumbit || userCreate.get('CourseId')?.valid == false && userSubmit.submitted && sumbit">
-            <p-message
-              severity="error"
-              text="Debe seleccionar un curso para el usuario"
-            ></p-message>
-          </div>
         </div>
-        <div class="butt" *ngIf="!disable">
-          <button pButton type="submit" label="Guardar Usuario"></button>
+        <div class="msgU"
+             *ngIf="userCreate.get('CourseId')?.touched && userCreate.get('CourseId')?.valid == false && sumbit || userCreate.get('CourseId')?.valid == false && userSubmit.submitted && sumbit">
+          <p-message
+            severity="error"
+            text="Debe seleccionar un curso para el usuario"
+          ></p-message>
         </div>
-        <div class="butt" *ngIf="disable">
-          <button pButton type="button" label="Guardar Usuario" (click)="updateUser()"></button>
-        </div>
-      </form>
+      </div>
+      <div class="inputU" *ngIf="disable">
+        <label>
+          <input type="checkbox" formControlName="activated"> Habilitar Usuario
+        </label>
+      </div>
+      <div class="butt" *ngIf="!disable">
+        <button pButton type="submit" label="Guardar Usuario"></button>
+      </div>
+      <div class="butt" *ngIf="disable">
+        <button pButton type="button" label="Guardar Usuario" (click)="updateUser()"></button>
+      </div>
+    </form>
   </p-fieldset>
 </div>

@@ -10,6 +10,7 @@ import campusCourseRoutes from "../Routes/campusCourse.routes";
 import contractRoutes from "../Routes/contract.routes";
 import contractServiceRoutes from "../Routes/contracService.routes";
 import checkListRoutes from "../Routes/checkList.routes";
+import serviceRoutes from "../Routes/service.routes";
 import cors from "cors"
 
 export class Server {
@@ -25,7 +26,8 @@ export class Server {
         campusCourse: '/api/campusCourse',
         contract: '/api/contract',
         contractService: '/api/contractService',
-        checkList: '/api/checkList'
+        checkList: '/api/checkList',
+        services: '/api/services'
     }
 
     constructor() {
@@ -60,6 +62,7 @@ export class Server {
         this.app.use(this.apiPaths.contract, contractRoutes);
         this.app.use(this.apiPaths.contractService, contractServiceRoutes);
         this.app.use(this.apiPaths.checkList, checkListRoutes);
+        this.app.use(this.apiPaths.services, serviceRoutes);
     }
 
     listen() {

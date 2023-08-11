@@ -24,3 +24,15 @@ export const getServiceContracByTypeService = async (req: Request, res: Response
         console.log(error)
     }
 };
+
+export const getServicesInfo = async (req: Request, res: Response, next: any) => {
+    const contracId = req.params.contracId;
+    try {
+        const contracService = await contracServiceService.findAllServiceContracType(contracId);
+        res.json(contracService);
+    } catch (error) {
+        console.log(error)
+        next(error);
+    }
+};
+

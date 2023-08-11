@@ -29,8 +29,9 @@ import { MessagesModule } from 'primeng/messages';
 import { ListComponent } from './Components/list/list.component';
 import { TableModule } from 'primeng/table';
 import { BreadcrumbModule } from 'primeng/breadcrumb';
-import { ListUserComponent } from './Components/list-user/list-user.component';
+import { ListUserComponent } from './Components/User/list-user/list-user.component';
 import { CheckboxModule } from 'primeng/checkbox';
+import { ListServiceComponent } from './Components/Service/list-service/list-service.component';
 
 
 
@@ -43,6 +44,7 @@ import { CheckboxModule } from 'primeng/checkbox';
     UserCreateComponent,
     ListComponent,
     ListUserComponent,
+    ListServiceComponent,
   ],
   imports: [
     BrowserModule,

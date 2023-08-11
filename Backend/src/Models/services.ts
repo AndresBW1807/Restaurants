@@ -1,5 +1,6 @@
 import {DataTypes, Model} from "sequelize";
 import db from "../Db/connection";
+import {TypeService} from "./typeService";
 
 class service extends Model {
     id!: number;
@@ -27,3 +28,6 @@ export const Service = db.define<service>("services", {
         type: DataTypes.NUMBER,
     }
 });
+
+TypeService.hasMany(Service, {foreignKey: 'typeServiceId'})
+Service.belongsTo(TypeService, {foreignKey: 'typeServiceId'})
