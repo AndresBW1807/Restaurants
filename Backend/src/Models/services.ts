@@ -13,7 +13,8 @@ class service extends Model {
 export const Service = db.define<service>("services", {
     id: {
         type: DataTypes.NUMBER,
-        primaryKey: true
+        primaryKey: true,
+        autoIncrement: true
     },
     data: {
         type: DataTypes.STRING,

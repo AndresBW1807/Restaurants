@@ -13,7 +13,6 @@
 .table{
   width: 100%;
   height: 85%;
-  background: #67B939;
 }
 
 h1 {
@@ -23,3 +22,12 @@ h1 {
 i {
   margin-right: 10px;
 }
+
+tr th {
+  text-align: center;
+}
+
+tr td {
+  text-align: center;
+}
+

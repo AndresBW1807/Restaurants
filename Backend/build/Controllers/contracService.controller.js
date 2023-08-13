@@ -9,8 +9,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getServicesInfo = exports.getServiceContracByTypeService = exports.getServiceContrac = void 0;
+exports.PostService = exports.getServicesInfo = exports.getServiceContracByTypeService = exports.getServiceContrac = void 0;
 const contracService_service_1 = require("../Services/contracService.service");
+const services_1 = require("../Models/services");
+const contracsServices_1 = require("../Models/contracsServices");
 const contracServiceService = new contracService_service_1.contractServiceService();
 const getServiceContrac = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     const contracId = req.params.contracId;
@@ -48,3 +50,35 @@ const getServicesInfo = (req, res, next) => __awaiter(void 0, void 0, void 0, fu
     }
 });
 exports.getServicesInfo = getServicesInfo;
+const PostService = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    const body = req.body;
+    const { typeServiceId } = req.body;
+    const { contracId } = req.params;
+    try {
+        // Verificar si ya existe un servicio con el mismo tipo para este contrato
+        const existingService = yield services_1.Service.findOne({
+            where: { typeServiceId }
+        });
+        if (existingService) {
+            const existingContractService = yield contracsServices_1.contracshasservices.findOne({
+                where: {
+                    serviceId: existingService.id,
+                    contracId
+                }
+            });
+            if (existingContractService) {
+                return res.status(400).json({ error: 'Este contrato ya tiene un servicio con este tipo de servicio.' });
+            }
+        }
+        // Crear el nuevo servicio
+        const newService = yield services_1.Service.create(body);
+        // Crear la entrada en ContratosHasService
+        yield contracsServices_1.contracshasservices.create({ contracId, serviceId: newService.id });
+        return res.status(201).json(newService);
+    }
+    catch (error) {
+        console.log(error);
+        return res.status(500).json({ error: 'Error al crear el servicio.' });
+    }
+});
+exports.PostService = PostService;

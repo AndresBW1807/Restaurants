@@ -1,6 +1,7 @@
 import {contracshasservices} from "../Models/contracsServices";
 import {Service} from "../Models/services";
 import {TypeService} from "../Models/typeService";
+import {ContractService} from "./contract.service";
 
 
 export class contractServiceService {
@@ -50,4 +51,6 @@ export class contractServiceService {
         })
         return campusCourse
     }
+
+
 }

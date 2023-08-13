@@ -32,6 +32,8 @@ import { BreadcrumbModule } from 'primeng/breadcrumb';
 import { ListUserComponent } from './Components/User/list-user/list-user.component';
 import { CheckboxModule } from 'primeng/checkbox';
 import { ListServiceComponent } from './Components/Service/list-service/list-service.component';
+import { CreateServiceComponent } from './Components/Service/create-service/create-service.component';
+import { DialogModule } from 'primeng/dialog';
 
 
 
@@ -45,6 +47,7 @@ import { ListServiceComponent } from './Components/Service/list-service/list-ser
     ListComponent,
     ListUserComponent,
     ListServiceComponent,
+    CreateServiceComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,6 +68,7 @@ import { ListServiceComponent } from './Components/Service/list-service/list-ser
     MessagesModule,
     BreadcrumbModule,
     CheckboxModule,
+    DialogModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: () => {

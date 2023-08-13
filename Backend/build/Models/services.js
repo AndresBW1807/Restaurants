@@ -12,7 +12,8 @@ class service extends sequelize_1.Model {
 exports.Service = connection_1.default.define("services", {
     id: {
         type: sequelize_1.DataTypes.NUMBER,
-        primaryKey: true
+        primaryKey: true,
+        autoIncrement: true
     },
     data: {
         type: sequelize_1.DataTypes.STRING,
