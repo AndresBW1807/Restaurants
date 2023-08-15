@@ -21,6 +21,8 @@ export class ListServiceComponent implements OnInit {
   nutritionalForm!: FormGroup;
   mealTypes: any[] = []
   Service!: ServiceModel;
+  Update = false;
+
 
   constructor(private AuthService: AuthService,
               private fb: FormBuilder,
@@ -42,29 +44,64 @@ export class ListServiceComponent implements OnInit {
     this.loadtable();
   }
 
+
+  updateService(service: ServiceModel){
+    this.title = 'Actualizar Servicio'
+    this.nutritionalForm.patchValue(service);
+    this.visible = true;
+    this.Update = true;
+    this.Service = service;
+  }
+
   onSubmit() {
-    this.Service = this.nutritionalForm.value
     this.Service.date = new Date();
-    this.contractService.getContractByCampus(this.userLogged.campus).subscribe(r => {
-      this.serviceService.PostService(this.Service, r.id).subscribe(r => {
-        this.Messages = [{
-          severity: 'success',
-          summary: 'Registrado',
-          detail: 'Servicio registrado con exito'
-        }]
-        this.NavService.modal = false
+    if (this.Update){
+      this.Service.data = this.nutritionalForm.get('data')?.value
+      this.contractService.getContractByCampus(this.userLogged.campus).subscribe(r => {
+        this.serviceService.PutService(this.Service, r.id).subscribe(r => {
+          this.Messages = [{
+            severity: 'success',
+            summary: 'Actualizado',
+            detail: 'Servicio actualizado con exito'
+          }]
+        })
+        if (!this.Messages || this.Messages.length == 0) {
+          this.Messages = [{
+            severity: 'error',
+            summary: 'No regsitrado',
+            detail: 'El servicio no se pudo actualizar'
+          }]
+        }
+        setTimeout(() => {
+          this.Messages = []
+          this.visible = false
+          this.ngOnInit();
+        }, 2000);
       })
-      if (!this.Messages || this.Messages.length == 0) {
-        this.Messages = [{
-          severity: 'error',
-          summary: 'No actualizado',
-          detail: 'El servicio no se pudo guardar'
-        }]
-      }
-      setTimeout(() => {
-        this.Messages = []
-      }, 2000);
-    })
+    } else {
+      this.Service = this.nutritionalForm.value
+      this.contractService.getContractByCampus(this.userLogged.campus).subscribe(r => {
+        this.serviceService.PostService(this.Service, r.id).subscribe(r => {
+          this.Messages = [{
+            severity: 'success',
+            summary: 'Registrado',
+            detail: 'Servicio registrado con exito'
+          }]
+        })
+        if (!this.Messages || this.Messages.length == 0) {
+          this.Messages = [{
+            severity: 'error',
+            summary: 'No registrado',
+            detail: 'El servicio no se pudo guardar, por favor revise si ya existe el tipo de servicio'
+          }]
+        }
+        setTimeout(() => {
+          this.Messages = []
+          this.visible = false
+          this.ngOnInit();
+        }, 2000);
+      })
+    }
   }
 
   form() {
@@ -83,6 +120,8 @@ export class ListServiceComponent implements OnInit {
   }
 
   showDialog() {
+    this.title = 'Crear Servicio'
     this.visible = true;
+    this.Update =  false;
   }
 }

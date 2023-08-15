@@ -9,6 +9,7 @@ import { environment } from 'src/environments/environment';
 export class NavService {
 
   private serviceUrl = environment.endpoint
+  public modal = true;
 
   constructor(
     private http: HttpClient

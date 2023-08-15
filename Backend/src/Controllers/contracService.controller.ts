@@ -38,7 +38,7 @@ export const getServicesInfo = async (req: Request, res: Response, next: any) =>
     }
 };
 
-export const PostService = async (req: Request, res: Response, next: any)=> {
+export const PostService = async (req: Request, res: Response, next: any) => {
     const body = req.body
     const {typeServiceId} = req.body;
     const {contracId} = req.params;
@@ -67,6 +67,24 @@ export const PostService = async (req: Request, res: Response, next: any)=> {
         // Crear la entrada en ContratosHasService
         await contracshasservices.create({contracId, serviceId: newService.id});
         return res.status(201).json(newService);
+    } catch (error) {
+        console.log(error)
+        return res.status(500).json({error: 'Error al crear el servicio.'});
+    }
+}
+
+export const PutService = async (req: Request, res: Response, next: any) => {
+    const body = req.body
+    try {
+        console.log(body)
+        const serviceToUpdate = await Service.findByPk(body.id);
+        if (!serviceToUpdate) {
+            return res.status(404).json({error: 'El servicio no existe.'});
+        }
+        // Crear el nuevo servicio
+        await serviceToUpdate.update(body);
+        // Crear la entrada en ContratosHasService
+        return res.status(201).json({message: 'Success'});
     } catch (error) {
         console.log(error)
         return res.status(500).json({error: 'Error al crear el servicio.'});

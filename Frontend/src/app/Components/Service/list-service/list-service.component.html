@@ -3,7 +3,7 @@
     <p-messages [(value)]="Messages" [enableService]="false" [closable]="true"></p-messages>
     <form [formGroup]="nutritionalForm" (ngSubmit)="onSubmit()" class="nutritional-form">
       <label for="typeServiceId">Tipo de Comida</label>
-      <p-dropdown formControlName="typeServiceId" [options]="mealTypes" placeholder="Seleccione un tipo de comida"></p-dropdown>
+      <p-dropdown formControlName="typeServiceId" [disabled]="Update" [options]="mealTypes" placeholder="Seleccione un tipo de comida"></p-dropdown>
 
       <label for="data">Informacion Nutricional</label>
       <input type="text" formControlName="data" pInputText class="InfNutri" />
@@ -43,7 +43,7 @@
         <tr>
           <td>{{ListService.service.typeservice.Type}}</td>
           <td>{{ListService.service.data}}</td>
-          <td style="text-align: center"><a><i class="pi pi-pencil" style="color: cornflowerblue"></i></a><a><i class="pi pi-trash" style="color: red"></i></a></td>
+          <td style="text-align: center"><a (click)="updateService(ListService.service)"><i class="pi pi-pencil" style="color: cornflowerblue"></i></a><a><i class="pi pi-trash" style="color: red"></i></a></td>
         </tr>
       </ng-template>
     </p-table>

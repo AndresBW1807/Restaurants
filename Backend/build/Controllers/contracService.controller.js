@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PostService = exports.getServicesInfo = exports.getServiceContracByTypeService = exports.getServiceContrac = void 0;
+exports.PutService = exports.PostService = exports.getServicesInfo = exports.getServiceContracByTypeService = exports.getServiceContrac = void 0;
 const contracService_service_1 = require("../Services/contracService.service");
 const services_1 = require("../Models/services");
 const contracsServices_1 = require("../Models/contracsServices");
@@ -82,3 +82,22 @@ const PostService = (req, res, next) => __awaiter(void 0, void 0, void 0, functi
     }
 });
 exports.PostService = PostService;
+const PutService = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    const body = req.body;
+    try {
+        console.log(body);
+        const serviceToUpdate = yield services_1.Service.findByPk(body.id);
+        if (!serviceToUpdate) {
+            return res.status(404).json({ error: 'El servicio no existe.' });
+        }
+        // Crear el nuevo servicio
+        yield serviceToUpdate.update(body);
+        // Crear la entrada en ContratosHasService
+        return res.status(201).json({ message: 'Success' });
+    }
+    catch (error) {
+        console.log(error);
+        return res.status(500).json({ error: 'Error al crear el servicio.' });
+    }
+});
+exports.PutService = PutService;
