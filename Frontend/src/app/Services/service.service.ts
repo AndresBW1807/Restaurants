@@ -28,4 +28,12 @@ export class ServiceService {
         })
     );
   }
+
+  DeleteService(ServiceId: number) {
+    return this.http.delete(this.serviceUrl + '/api/contractService/' + ServiceId).pipe(
+      map((r) => {
+        return r as ServiceModel;
+      })
+    );
+  }
 }

@@ -53,9 +53,30 @@ export class ListServiceComponent implements OnInit {
     this.Service = service;
   }
 
+  deleteService(service: ServiceModel){
+    this.serviceService.DeleteService(service.id).subscribe( r => {
+      this.Messages = [{
+        severity: 'success',
+        summary: 'Eliminado',
+        detail: 'Servicio eliminado con exito'
+      }]
+      this.ngOnInit();
+    })
+    if (!this.Messages || this.Messages.length == 0) {
+      this.Messages = [{
+        severity: 'error',
+        summary: 'No eliminado',
+        detail: 'El servicio no se pudo eliminar'
+      }]
+    }
+    setTimeout(() => {
+      this.Messages = []
+    }, 2000);
+  }
+
   onSubmit() {
-    this.Service.date = new Date();
     if (this.Update){
+      this.Service.date = new Date();
       this.Service.data = this.nutritionalForm.get('data')?.value
       this.contractService.getContractByCampus(this.userLogged.campus).subscribe(r => {
         this.serviceService.PutService(this.Service, r.id).subscribe(r => {
@@ -64,6 +85,8 @@ export class ListServiceComponent implements OnInit {
             summary: 'Actualizado',
             detail: 'Servicio actualizado con exito'
           }]
+          this.visible = false
+          this.ngOnInit();
         })
         if (!this.Messages || this.Messages.length == 0) {
           this.Messages = [{
@@ -71,15 +94,16 @@ export class ListServiceComponent implements OnInit {
             summary: 'No regsitrado',
             detail: 'El servicio no se pudo actualizar'
           }]
+          this.visible = false
+          this.ngOnInit();
         }
         setTimeout(() => {
           this.Messages = []
-          this.visible = false
-          this.ngOnInit();
         }, 2000);
       })
     } else {
       this.Service = this.nutritionalForm.value
+      this.Service.date = new Date();
       this.contractService.getContractByCampus(this.userLogged.campus).subscribe(r => {
         this.serviceService.PostService(this.Service, r.id).subscribe(r => {
           this.Messages = [{
@@ -87,6 +111,8 @@ export class ListServiceComponent implements OnInit {
             summary: 'Registrado',
             detail: 'Servicio registrado con exito'
           }]
+          this.visible = false
+          this.ngOnInit();
         })
         if (!this.Messages || this.Messages.length == 0) {
           this.Messages = [{
@@ -94,11 +120,11 @@ export class ListServiceComponent implements OnInit {
             summary: 'No registrado',
             detail: 'El servicio no se pudo guardar, por favor revise si ya existe el tipo de servicio'
           }]
+          this.visible = false
+          this.ngOnInit();
         }
         setTimeout(() => {
           this.Messages = []
-          this.visible = false
-          this.ngOnInit();
         }, 2000);
       })
     }

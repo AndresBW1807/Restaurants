@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PutService = exports.PostService = exports.getServicesInfo = exports.getServiceContracByTypeService = exports.getServiceContrac = void 0;
+exports.DeleteService = exports.PutService = exports.PostService = exports.getServicesInfo = exports.getServiceContracByTypeService = exports.getServiceContrac = void 0;
 const contracService_service_1 = require("../Services/contracService.service");
 const services_1 = require("../Models/services");
 const contracsServices_1 = require("../Models/contracsServices");
@@ -101,3 +101,23 @@ const PutService = (req, res, next) => __awaiter(void 0, void 0, void 0, functio
     }
 });
 exports.PutService = PutService;
+const DeleteService = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    const { serviceId } = req.params;
+    try {
+        // Verificar si el servicio existe
+        const serviceToDelete = yield services_1.Service.findByPk(serviceId);
+        if (!serviceToDelete) {
+            return res.status(404).json({ error: 'El servicio no existe.' });
+        }
+        // Eliminar la entrada en ContratosHasService
+        yield contracsServices_1.contracshasservices.destroy({ where: { serviceId } });
+        // Eliminar el servicio
+        yield serviceToDelete.destroy();
+        return res.status(200).json({ message: 'Servicio eliminado exitosamente.' });
+    }
+    catch (error) {
+        console.error('Error al eliminar el servicio:', error);
+        return res.status(500).json({ error: 'Error al eliminar el servicio.' });
+    }
+});
+exports.DeleteService = DeleteService;

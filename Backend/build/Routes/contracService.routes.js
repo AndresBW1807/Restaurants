@@ -9,4 +9,5 @@ router.get("/service/:contracId", contracService_controller_1.getServicesInfo);
 router.get('/contrac/:contracId/typeService/:typeServiceId', [validationJWT_1.validationJwt], contracService_controller_1.getServiceContracByTypeService);
 router.post("/:contracId", contracService_controller_1.PostService);
 router.put("/:contracId", contracService_controller_1.PutService);
+router.delete("/:serviceId", contracService_controller_1.DeleteService);
 exports.default = router;

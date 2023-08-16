@@ -5,21 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="53540d83-6755-4b6c-9437-3a3e9b92c6a7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/src/app/Models/Service.model.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/build/Controllers/contracService.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Controllers/contracService.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/src/Controllers/contracService.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Controllers/contracService.controller.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/src/Routes/contracService.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Routes/contracService.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/Components/Service/create-service/create-service.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/Components/Service/create-service/create-service.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/Components/Service/create-service/create-service.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/Components/Service/create-service/create-service.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/Components/Service/list-service/list-service.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/Components/Service/list-service/list-service.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/src/app/Components/Service/list-service/list-service.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/Components/Service/list-service/list-service.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/src/app/Components/Service/list-service/list-service.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/Components/Service/list-service/list-service.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/Services/nav.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/Services/nav.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/Models/Service.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/Models/Service.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/Services/service.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/Services/service.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,28 +37,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "develop",
-    "last_opened_file_path": "G:/W11Data/OneDrive/Documentos/Restaurants/Backend",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "G:\\W11Data\\OneDrive\\Documentos\\Restaurants\\Frontend\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;last_opened_file_path&quot;: &quot;G:/W11Data/OneDrive/Documentos/Restaurants/Backend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;G:\\W11Data\\OneDrive\\Documentos\\Restaurants\\Frontend\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\W11Data\OneDrive\Documentos\Restaurants\Frontend\src\app\Components\User" />
@@ -97,7 +89,8 @@
       <workItem from="1691881260742" duration="843000" />
       <workItem from="1691933292129" duration="8247000" />
       <workItem from="1692030635329" duration="7000" />
-      <workItem from="1692119402623" duration="9290000" />
+      <workItem from="1692119402623" duration="9338000" />
+      <workItem from="1692194088197" duration="1696000" />
     </task>
     <servers />
   </component>

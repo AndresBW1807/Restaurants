@@ -2,6 +2,7 @@ import {Injectable} from "@angular/core";
 
 @Injectable()
 export class ServiceModel {
+  public id!: number;
   public data: string;
   public date: Date;
   public description: string;

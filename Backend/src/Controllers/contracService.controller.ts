@@ -91,3 +91,24 @@ export const PutService = async (req: Request, res: Response, next: any) => {
     }
 }
 
+export const DeleteService = async (req: Request, res: Response, next: any) => {
+    const { serviceId } = req.params;
+    try {
+        // Verificar si el servicio existe
+        const serviceToDelete = await Service.findByPk(serviceId);
+        if (!serviceToDelete) {
+            return res.status(404).json({ error: 'El servicio no existe.' });
+        }
+
+        // Eliminar la entrada en ContratosHasService
+        await contracshasservices.destroy({ where: { serviceId } });
+
+        // Eliminar el servicio
+        await serviceToDelete.destroy();
+
+        return res.status(200).json({ message: 'Servicio eliminado exitosamente.' });
+    } catch (error) {
+        console.error('Error al eliminar el servicio:', error);
+        return res.status(500).json({ error: 'Error al eliminar el servicio.' });
+    }
+}
