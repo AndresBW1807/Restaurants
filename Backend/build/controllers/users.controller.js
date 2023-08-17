@@ -32,7 +32,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getUserbyCampus = exports.updateUsuario = exports.postUsuario = exports.postUsuariosUnassistance = exports.getUsersWithAttendance = exports.getUsuariosUnassistance = exports.getUsuarios = void 0;
+exports.getGraphOneServ = exports.getUserbyCampus = exports.updateUsuario = exports.postUsuario = exports.postUsuariosUnassistance = exports.getUsersWithAttendance = exports.getUsuariosUnassistance = exports.getUsuarios = void 0;
 const User_service_1 = require("../Services/User.service");
 const user_1 = require("../Models/user");
 const bcryptjs = __importStar(require("bcryptjs"));
@@ -153,3 +153,15 @@ const getUserbyCampus = (req, res, next) => __awaiter(void 0, void 0, void 0, fu
     }
 });
 exports.getUserbyCampus = getUserbyCampus;
+const getGraphOneServ = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    const { campusId } = req.params;
+    try {
+        const users = yield userService.getGraphOne(campusId);
+        res.json(users);
+    }
+    catch (error) {
+        console.log(error);
+        next(error);
+    }
+});
+exports.getGraphOneServ = getGraphOneServ;

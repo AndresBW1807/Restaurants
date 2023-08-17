@@ -50,7 +50,6 @@ export const postUsuariosUnassistance = async (req: Request, res: Response, next
     }
 }
 
-
 export const postUsuario = async (req: Request, res: Response, next: any) => {
     const {body} = req;
     try {
@@ -110,8 +109,6 @@ export const updateUsuario = async (req: Request, res: Response, next: any) => {
     }
 };
 
-
-
 export const getUserbyCampus = async (req: Request, res: Response, next: any) => {
     const campusId = req.params.campusId;
     try {
@@ -121,3 +118,17 @@ export const getUserbyCampus = async (req: Request, res: Response, next: any) =>
         next(error);
     }
 }
+
+
+export const getGraphOneServ = async (req: Request, res: Response, next: any) => {
+    const {campusId} = req.params;
+    try {
+        const users = await userService.getGraphOne(campusId)
+        res.json(users);
+    } catch (error) {
+        console.log(error)
+        next(error);
+    }
+}
+
+

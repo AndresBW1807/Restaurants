@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="opt">
+    <h1>Graficas de asistencia</h1>
+    <div class="card">
+      <p-autoComplete [(ngModel)]="SelectedUser" [dropdown]="true" [suggestions]="filteredUsers"
+                      (completeMethod)="filterUser($event)" field="nombreCompleto"></p-autoComplete>
+    </div>
+  </div>
+  <div class="carGr">
+    <div class="grid-item">
+      <ngx-charts-pie-chart
+        [view]="view"
+        [scheme]="colorScheme"
+        [results]="data"
+        [gradient]="gradient"
+        [legend]="showLegend"
+        [labels]="showLabels"
+        [doughnut]="isDoughnut"
+      >
+      </ngx-charts-pie-chart>
+    </div>
+    <div class="grid-item">2</div>
+    <div class="grid-item">3</div>
+    <div class="grid-item">4</div>
+  </div>
+</div>

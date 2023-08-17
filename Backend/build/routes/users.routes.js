@@ -11,4 +11,5 @@ router.get('/unassistance/campusId/:campusId/service/:serviceId', [validationJWT
 router.get('/Attendance/campusId/:campusId/service/:serviceId', [validationJWT_1.validationJwt], users_controller_1.getUsersWithAttendance);
 router.post('/unassistance/campusId/:campusId/service/:serviceId', [validationJWT_1.validationJwt], users_controller_1.postUsuariosUnassistance);
 router.put("/updateUser/:userId", [validationJWT_1.validationJwt], users_controller_1.updateUsuario);
+router.get("/campus/:campusId", users_controller_1.getGraphOneServ);
 exports.default = router;

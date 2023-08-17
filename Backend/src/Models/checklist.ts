@@ -1,6 +1,7 @@
 import {DataTypes, Model} from "sequelize";
 import db from "../Db/connection";
 import {User} from "./user";
+import {Service} from "./services";
 
 class checklist extends Model {
     id!: number;
@@ -8,6 +9,7 @@ class checklist extends Model {
     date!: Date;
     serviceId!: number;
     userId!: number;
+    user!: any;
 }
 
 export const CheckList = db.define<checklist>("checklist", {
@@ -29,5 +31,9 @@ export const CheckList = db.define<checklist>("checklist", {
     }
 });
 
+Service.hasMany(CheckList, { foreignKey: 'serviceId'})
+CheckList.belongsTo(Service, {foreignKey: 'serviceId'})
+
 User.hasMany(CheckList, { foreignKey: 'userId'})
 CheckList.belongsTo(User, {foreignKey: 'userId'})
+

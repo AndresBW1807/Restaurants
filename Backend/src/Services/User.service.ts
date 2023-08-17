@@ -3,6 +3,9 @@ import {User} from "../Models/user";
 import {campushascourses} from "../Models/campusCourses";
 import {CheckList} from "../Models/checklist";
 import {Op} from "sequelize";
+import {Service} from "../Models/services";
+
+
 
 export class UserService {
 
@@ -62,7 +65,6 @@ export class UserService {
         });
         return users;
     }
-
 
     async getUsersWithAttendance(campusId: string, serviceId: string) {
         let day = new Date();
@@ -151,6 +153,43 @@ export class UserService {
         } catch (error) {
             console.error('Error al registrar inasistencia:', error);
             throw new Error('Error en el servidor');
+        }
+    }
+
+    async getGraphOne(campusId: string) {
+        try {
+            const checklistData = await CheckList.findAll({
+                where: {
+                    assistance: true,
+                },
+                include: [
+                    {
+                        model: User,
+                        attributes: [],
+                        include: [
+                            {
+                                model: campushascourses,
+                                attributes: [],
+                                where: {
+                                    campusId: campusId,
+                                },
+                            },
+                        ],
+                    },
+                    {
+                        model: Service,
+                        attributes: ['typeServiceId']
+                    },
+                ],
+            });
+
+            // Filtrar los objetos con user null
+            const filteredChecklistData = checklistData.filter(item => item.user !== null);
+
+            return filteredChecklistData;
+        } catch (error) {
+            console.error('Error al obtener los datos:', error);
+            throw error;
         }
     }
 

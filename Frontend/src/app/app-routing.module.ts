@@ -6,17 +6,19 @@ import { AuthGuardService } from './Services/auth-guard.service';
 import {ListComponent} from "./Components/list/list.component";
 import {ListUserComponent} from "./Components/User/list-user/list-user.component";
 import {ListServiceComponent} from "./Components/Service/list-service/list-service.component";
+import {GrphComponent} from "./Components/Graphs/grph/grph.component";
 
 
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'ListService', pathMatch: 'full' },
+  { path: '', redirectTo: 'GraphAdm', pathMatch: 'full' },
   { path: 'login', component: LoginComponent},
   { path: 'userCreate', component: UserCreateComponent, canActivate: [AuthGuardService]},
   { path: 'checkList', component: ListComponent, canActivate: [AuthGuardService]},
   { path: 'ListUser', component: ListUserComponent, canActivate: [AuthGuardService]},
   { path: 'ListService', component: ListServiceComponent, canActivate: [AuthGuardService]},
+  { path: 'GraphAdm', component: GrphComponent, canActivate: [AuthGuardService]},
 ];
 //, canActivate: [AuthGuard]
 @NgModule({

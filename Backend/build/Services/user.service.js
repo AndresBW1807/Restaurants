@@ -15,6 +15,7 @@ const user_1 = require("../Models/user");
 const campusCourses_1 = require("../Models/campusCourses");
 const checklist_1 = require("../Models/checklist");
 const sequelize_1 = require("sequelize");
+const services_1 = require("../Models/services");
 class UserService {
     find() {
         return __awaiter(this, void 0, void 0, function* () {
@@ -157,6 +158,43 @@ class UserService {
             catch (error) {
                 console.error('Error al registrar inasistencia:', error);
                 throw new Error('Error en el servidor');
+            }
+        });
+    }
+    getGraphOne(campusId) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                const checklistData = yield checklist_1.CheckList.findAll({
+                    where: {
+                        assistance: true,
+                    },
+                    include: [
+                        {
+                            model: user_1.User,
+                            attributes: [],
+                            include: [
+                                {
+                                    model: campusCourses_1.campushascourses,
+                                    attributes: [],
+                                    where: {
+                                        campusId: campusId,
+                                    },
+                                },
+                            ],
+                        },
+                        {
+                            model: services_1.Service,
+                            attributes: ['typeServiceId']
+                        },
+                    ],
+                });
+                // Filtrar los objetos con user null
+                const filteredChecklistData = checklistData.filter(item => item.user !== null);
+                return filteredChecklistData;
+            }
+            catch (error) {
+                console.error('Error al obtener los datos:', error);
+                throw error;
             }
         });
     }

@@ -7,6 +7,7 @@ exports.CheckList = void 0;
 const sequelize_1 = require("sequelize");
 const connection_1 = __importDefault(require("../Db/connection"));
 const user_1 = require("./user");
+const services_1 = require("./services");
 class checklist extends sequelize_1.Model {
 }
 exports.CheckList = connection_1.default.define("checklist", {
@@ -27,5 +28,7 @@ exports.CheckList = connection_1.default.define("checklist", {
         type: sequelize_1.DataTypes.NUMBER
     }
 });
+services_1.Service.hasMany(exports.CheckList, { foreignKey: 'serviceId' });
+exports.CheckList.belongsTo(services_1.Service, { foreignKey: 'serviceId' });
 user_1.User.hasMany(exports.CheckList, { foreignKey: 'userId' });
 exports.CheckList.belongsTo(user_1.User, { foreignKey: 'userId' });

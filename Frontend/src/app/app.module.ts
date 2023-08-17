@@ -6,6 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {JwtModule} from "@auth0/angular-jwt";
 import {HttpClientModule, HTTP_INTERCEPTORS} from "@angular/common/http";
 import { InterceptorService } from './Services/interceptor.service';
+import { GoogleChartsModule } from 'angular-google-charts';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 
 //----------------Components------------------------
@@ -16,6 +18,7 @@ import { NavComponent } from './Components/Utilities/nav/nav.component';
 import { ListServiceComponent } from './Components/Service/list-service/list-service.component';
 import { ListUserComponent } from './Components/User/list-user/list-user.component';
 import { ListComponent } from './Components/list/list.component';
+import { GrphComponent } from './Components/Graphs/grph/grph.component';
 
 
 
@@ -35,8 +38,6 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { DialogModule } from 'primeng/dialog';
 
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,10 +47,12 @@ import { DialogModule } from 'primeng/dialog';
     ListComponent,
     ListUserComponent,
     ListServiceComponent,
+    GrphComponent,
   ],
   imports: [
     BrowserModule,
     TableModule,
+    NgxChartsModule,
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
@@ -67,6 +70,7 @@ import { DialogModule } from 'primeng/dialog';
     BreadcrumbModule,
     CheckboxModule,
     DialogModule,
+    GoogleChartsModule.forRoot(),
     JwtModule.forRoot({
       config: {
         tokenGetter: () => {

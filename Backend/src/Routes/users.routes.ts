@@ -1,5 +1,6 @@
 import { Router } from "express";
 import {
+    getGraphOneServ,
     getUserbyCampus,
     getUsersWithAttendance,
     getUsuarios,
@@ -17,4 +18,5 @@ router.get('/unassistance/campusId/:campusId/service/:serviceId', [validationJwt
 router.get('/Attendance/campusId/:campusId/service/:serviceId', [validationJwt], getUsersWithAttendance)
 router.post('/unassistance/campusId/:campusId/service/:serviceId', [validationJwt], postUsuariosUnassistance)
 router.put("/updateUser/:userId", [validationJwt], updateUsuario);
+router.get("/campus/:campusId",  getGraphOneServ);
 export default router;

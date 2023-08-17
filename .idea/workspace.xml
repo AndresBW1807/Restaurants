@@ -5,13 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="53540d83-6755-4b6c-9437-3a3e9b92c6a7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/Controllers/contracService.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Controllers/contracService.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/Routes/contracService.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Routes/contracService.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/Components/Service/list-service/list-service.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/Components/Service/list-service/list-service.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/Components/Service/list-service/list-service.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/Components/Service/list-service/list-service.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/Models/Service.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/Models/Service.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/Services/service.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/Services/service.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/build/Services/user.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Services/user.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/build/controllers/users.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/controllers/users.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/build/routes/users.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/routes/users.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/Controllers/users.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Controllers/users.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/Models/checklist.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Models/checklist.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/Routes/users.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Routes/users.routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/Services/User.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Services/User.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +32,20 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "AndresFW1807"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="9229cb25-c147-443e-baec-14591c680733" />
+        <option name="url" value="https://github.com/AndresBW1807/Restaurants.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -61,6 +82,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\W11Data\OneDrive\Documentos\Restaurants\Frontend\src\app\Components\Graphs" />
       <recent name="G:\W11Data\OneDrive\Documentos\Restaurants\Frontend\src\app\Components\User" />
     </key>
   </component>
@@ -90,7 +112,7 @@
       <workItem from="1691933292129" duration="8247000" />
       <workItem from="1692030635329" duration="7000" />
       <workItem from="1692119402623" duration="9338000" />
-      <workItem from="1692194088197" duration="1696000" />
+      <workItem from="1692194088197" duration="20637000" />
     </task>
     <servers />
   </component>
