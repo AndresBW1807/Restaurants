@@ -23,10 +23,11 @@ export const campushascourses = db.define<campusCourse>('campushascourses', {
     }
 });
 
-Course?.hasMany(campushascourses, { foreignKey: "courseId" });
-campushascourses.belongsTo(Course, { foreignKey: "courseId" });
 Campus?.hasMany(campushascourses, {foreignKey: 'campusId'});
 campushascourses.belongsTo(Campus, { foreignKey: "campusId" });
+Course?.hasMany(campushascourses, { foreignKey: "courseId" });
+campushascourses.belongsTo(Course, { foreignKey: "courseId" });
+
 
 
 

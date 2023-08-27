@@ -10,6 +10,7 @@ class checklist extends Model {
     serviceId!: number;
     userId!: number;
     user!: any;
+    createdAt!: string | number | Date;
 }
 
 export const CheckList = db.define<checklist>("checklist", {

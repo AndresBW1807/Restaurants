@@ -22,7 +22,7 @@ exports.campushascourses = connection_1.default.define('campushascourses', {
         type: sequelize_1.DataTypes.NUMBER
     }
 });
-courses_1.Course === null || courses_1.Course === void 0 ? void 0 : courses_1.Course.hasMany(exports.campushascourses, { foreignKey: "courseId" });
-exports.campushascourses.belongsTo(courses_1.Course, { foreignKey: "courseId" });
 campus_1.Campus === null || campus_1.Campus === void 0 ? void 0 : campus_1.Campus.hasMany(exports.campushascourses, { foreignKey: 'campusId' });
 exports.campushascourses.belongsTo(campus_1.Campus, { foreignKey: "campusId" });
+courses_1.Course === null || courses_1.Course === void 0 ? void 0 : courses_1.Course.hasMany(exports.campushascourses, { foreignKey: "courseId" });
+exports.campushascourses.belongsTo(courses_1.Course, { foreignKey: "courseId" });

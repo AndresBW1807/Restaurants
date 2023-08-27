@@ -171,7 +171,7 @@ class UserService {
                     include: [
                         {
                             model: user_1.User,
-                            attributes: [],
+                            attributes: ['id'],
                             include: [
                                 {
                                     model: campusCourses_1.campushascourses,

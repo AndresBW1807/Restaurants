@@ -9,6 +9,17 @@
       <change beforePath="$PROJECT_DIR$/Backend/build/Controllers/users.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Controllers/users.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Routes/users.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Routes/users.routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/build/Services/User.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Services/User.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/build/Services/cheklist.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/build/Services/cheklist.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/Controllers/checkList.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Controllers/checkList.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/Models/campusCourses.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Models/campusCourses.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/Models/checklist.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Models/checklist.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/Models/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Models/user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/Routes/checkList.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Routes/checkList.routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/Services/User.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Services/User.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/Services/cheklist.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Services/cheklist.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/Components/Graphs/grph/grph.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/Components/Graphs/grph/grph.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/Components/Graphs/grph/grph.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/Components/Graphs/grph/grph.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/Components/Graphs/grph/grph.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/Components/Graphs/grph/grph.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,6 +115,11 @@
       <workItem from="1692119402623" duration="9338000" />
       <workItem from="1692194088197" duration="20765000" />
       <workItem from="1692279210049" duration="11000" />
+      <workItem from="1692632074579" duration="1428000" />
+      <workItem from="1692718117346" duration="14000" />
+      <workItem from="1692727957054" duration="5696000" />
+      <workItem from="1692818308263" duration="608000" />
+      <workItem from="1693077304050" duration="13527000" />
     </task>
     <servers />
   </component>

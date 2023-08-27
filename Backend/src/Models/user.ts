@@ -51,3 +51,4 @@ export const User = db.define <UserAttributes>('users', {
 campushascourses.hasMany(User, {foreignKey: 'campushascourses_id'})
 User.belongsTo(campushascourses, {foreignKey: 'campushascourses_id'})
 
+

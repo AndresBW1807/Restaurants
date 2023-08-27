@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {UsersService} from "../../../Services/users.service";
 import {AuthService} from "../../../Services/auth.service";
-import {checkListModel} from "../../../Models/checkList.model";
-import {ChartType} from "angular-google-charts";
+import {GraphService} from "../../../Services/graph.service";
 
 interface AutoCompleteCompleteEvent {
   originalEvent: Event;
@@ -15,13 +14,41 @@ interface AutoCompleteCompleteEvent {
   styleUrls: ['./grph.component.css']
 })
 export class GrphComponent implements OnInit {
+
+  /*Grafica 3*/
+  multi2: any[] = []
+  legend: boolean = true;
+  animations: boolean = true;
+  xAxis: boolean = true;
+  yAxis: boolean = true;
+  timeline: boolean = true;
+  /*--------------*/
+
+  /*Grafica 2*/
+  multi: any[] = []
+  showXAxis: boolean = true;
+  showYAxis: boolean = true;
+  showXAxisLabel: boolean = true;
+  xAxisLabel: string = 'Country';
+  showYAxisLabel: boolean = true;
+  yAxisLabel: string = 'Population';
+  legendTitle: string = 'Years';
+  colorScheme2 = {
+    domain: ['#5AA454', '#C7B42C', '#AAAAAA']
+  };
+
+  /*--------------*/
+  count1 = 0;
+  count2 = 0;
+  count3 = 0;
+  count4 = 0;
   userLogged: any;
   users: any[] = [];
   filteredUsers!: any[];
   SelectedUser: any;
   data: any[] = []
   options: any;
-  view:[number, number] = [700, 400];
+  view: [number, number] = [700, 400];
 
   // options
   gradient: boolean = true;
@@ -36,30 +63,15 @@ export class GrphComponent implements OnInit {
   constructor(
     private userService: UsersService,
     private AuthService: AuthService,
+    private graphService: GraphService
   ) {
     this.userLogged = AuthService.getLoggedUser();
   }
 
   ngOnInit() {
-    this.data = [
-        {
-          "name": "Germany",
-          "value": 8940000
-        },
-        {
-          "name": "USA",
-          "value": 5000000
-        },
-        {
-          "name": "France",
-          "value": 7200000
-        },
-        {
-          "name": "UK",
-          "value": 6200000
-        }
-    ];
-
+    this.graphOne();
+    this.graphTwo();
+    this.graphThree();
     this.options = {
       // Configuración de opciones (por ejemplo, leyendas, colores, etc.)
     };
@@ -71,25 +83,94 @@ export class GrphComponent implements OnInit {
     })
   }
 
-  findIdByFullName(fullName: string): number | undefined {
-    const personaEncontrada = this.users.find(persona =>
-      persona.nombreCompleto === fullName
-    );
+  graphOne() {
+    this.graphService.getChecklisUsers(this.userLogged.campus).subscribe(r => {
+      r.forEach(x => {
+        if (x.service.typeServiceId === 1) {
+          this.count1 = this.count1 + 1;
+        }
+        if (x.service.typeServiceId === 2) {
+          this.count2 = this.count2 + 1;
+        }
+        if (x.service.typeServiceId === 3) {
+          this.count3 = this.count3 + 1;
+        }
+        if (x.service.typeServiceId === 4) {
+          this.count4 = this.count4 + 1;
+        }
+      })
 
-    return personaEncontrada ? personaEncontrada.id : undefined;
+      this.data = [
+        {
+          "name": "Desayuno",
+          "value": this.count1
+        },
+        {
+          "name": "Almuerzo",
+          "value": this.count2
+        },
+        {
+          "name": "Comida",
+          "value": this.count3
+        },
+        {
+          "name": "Refrigerio",
+          "value": this.count4
+        }
+      ];
+    })
   }
 
-  filterUser(event: AutoCompleteCompleteEvent) {
-    let filtered: any[] = [];
-    let query = event.query;
+  graphTwo() {
+    const serviceIdToName = {
+      1: "Desayuno",
+      2: "Almuerzo",
+      3: "Comida",
+      4: "Refrigerio"
+    };
+    const multi: any[] = []
+    this.graphService.getAssistance(this.userLogged.campus).subscribe(r => {
+      for (const typeServiceId in serviceIdToName) {
+        if (serviceIdToName.hasOwnProperty(typeServiceId)) {
+          // @ts-ignore
+          const serviceName = serviceIdToName[typeServiceId];
+          const series = [];
 
-    for (let i = 0; i < (this.users as any[]).length; i++) {
-      let user = (this.users as any[])[i];
-      if (user.nombreCompleto.toLowerCase().indexOf(query.toLowerCase()) == 0) {
-        filtered.push(user);
+          // Iterar a través de los años
+          for (const year in r) {
+            if (r.hasOwnProperty(year)) {
+              const value = r[year].filter((item: any) => item.service.typeServiceId === parseInt(typeServiceId)).length;
+              series.push({"name": year, "value": value});
+            }
+          }
+          multi.push({
+            "name": serviceName,
+            "series": series
+          });
+        }
+        this.multi = multi
       }
-    }
+    })
+  }
 
-    this.filteredUsers = filtered;
+  graphThree(){
+    const multi: any[] = []
+    this.graphService.getAssistance(this.userLogged.campus).subscribe(r => {
+      const series = [];
+      for (const year in r) {
+        if (r.hasOwnProperty(year)) {
+          const assistanceCount = r[year].length;
+          series.push({
+            "name": year,
+            "value": assistanceCount
+          });
+        }
+        multi.push({
+          "name": "Asistencias",
+          "series": series
+        });
+      }
+      this.multi2 = multi
+    })
   }
 }

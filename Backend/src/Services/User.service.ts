@@ -165,7 +165,7 @@ export class UserService {
                 include: [
                     {
                         model: User,
-                        attributes: [],
+                        attributes: ['id'],
                         include: [
                             {
                                 model: campushascourses,
